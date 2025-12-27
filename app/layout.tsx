@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 const inter = Inter({
@@ -47,14 +48,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://zeitloseprodukte.de'),
+  metadataBase: new URL('https://zeitlosguteprodukte.de'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'de_DE',
-    url: 'https://zeitloseprodukte.de',
+    url: 'https://zeitlosguteprodukte.de',
     siteName: 'Zeitlos Gute Produkte',
     title: 'Zeitlos Gute Produkte | Qualität, die ein Leben lang hält',
     description:
@@ -100,6 +101,15 @@ export default function RootLayout({
         <div className="noise-overlay" aria-hidden="true" />
 
         {children}
+
+        {/* Plausible Analytics - Privacy-friendly, no cookies */}
+        <Script
+          src="https://plausible.io/js/pa-D0PANXj48WoiZS7AH8G0H.js"
+          strategy="afterInteractive"
+        />
+        <Script id="plausible-init" strategy="afterInteractive">
+          {`window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()`}
+        </Script>
       </body>
     </html>
   )
