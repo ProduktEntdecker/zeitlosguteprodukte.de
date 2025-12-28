@@ -5,9 +5,10 @@ import type { Product } from '@/lib/products'
 interface ProductCardProps {
   product: Product
   index?: number
+  campaign?: string // Optional campaign identifier (used for tracking context)
 }
 
-export default function ProductCard({ product, index = 0 }: ProductCardProps) {
+export default function ProductCard({ product, index = 0, campaign }: ProductCardProps) {
   return (
     <article
       className="group relative"

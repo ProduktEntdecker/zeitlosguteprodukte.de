@@ -22,58 +22,6 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    slug: 'lamy-2000',
-    name: 'Lamy 2000',
-    brand: 'Lamy',
-    tagline: 'Der Füllfederhalter für die Ewigkeit',
-    teaser:
-      'Seit 1966 unverändert. Der Lamy 2000 vereint Bauhaus-Design mit makelloser Ingenieurskunst – ein Schreibgerät, das Generationen überdauert.',
-    description: `
-Der Lamy 2000 ist mehr als ein Füllfederhalter – er ist ein Statement. 1966 vom legendären Designer Gerd A. Müller entworfen, gilt er bis heute als Meisterwerk des deutschen Industriedesigns.
-
-## Warum der Lamy 2000?
-
-**Zeitloses Bauhaus-Design**
-Die klaren Linien und die nahtlose Konstruktion aus Makrolon (glasfaserverstärktem Polycarbonat) und gebürstetem Edelstahl machen den Lamy 2000 zu einem Objekt von zeitloser Eleganz. Keine sichtbaren Schrauben, keine überflüssigen Details – nur pure Funktion in perfekter Form.
-
-**Deutsche Ingenieurskunst**
-Die 14-Karat-Goldfeder mit Platinüberzug gleitet sanft über das Papier. Der patentierte Kolbenfüllmechanismus funktioniert präzise und zuverlässig. Jedes Detail wurde bis zur Perfektion durchdacht.
-
-**Gebaut für Generationen**
-Während andere Schreibgeräte nach Jahren ersetzt werden müssen, verbessert sich der Lamy 2000 mit der Zeit. Die Feder passt sich Ihrer Handschrift an, das Material entwickelt eine edle Patina. Viele Exemplare werden von Generation zu Generation weitergegeben.
-
-## Die Investition, die sich lohnt
-
-Mit einem Preis von etwa 200€ ist der Lamy 2000 keine Impulskaufentscheidung. Aber bedenken Sie: Über 20, 30 oder gar 50 Jahre gerechnet, kostet Sie dieses Schreibgerät weniger als ein Euro pro Monat. Was bekommen Sie dafür? Ein Werkzeug, das jeden Schreibmoment zu einem bewussten Akt macht.
-
-## Für wen ist der Lamy 2000?
-
-- Profis, die täglich schreiben und Qualität zu schätzen wissen
-- Design-Enthusiasten, die Bauhaus-Ästhetik lieben
-- Menschen, die bewusst konsumieren wollen
-- Sammler und Liebhaber feiner Schreibgeräte
-    `,
-    image: 'https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=800&q=80',
-    price: '199,00 €',
-    affiliateUrl: 'https://www.amazon.de/dp/B000UZL04K',
-    category: 'Schreibgeräte',
-    heritage: 'Seit 1966',
-    warranty: 'Lebenslange Garantie auf die Feder',
-    madeIn: 'Deutschland',
-    features: [
-      '14-Karat-Goldfeder mit Platinüberzug',
-      'Makrolon-Gehäuse mit Edelstahlakzenten',
-      'Kolbenfüllsystem',
-      'Bauhaus-Design von Gerd A. Müller',
-    ],
-    relatedSlugs: ['moccamaster', 'rimowa-original'],
-    seo: {
-      title: 'Lamy 2000 Füllfederhalter – Zeitloses Bauhaus-Design seit 1966',
-      description:
-        'Der Lamy 2000 ist ein Meisterwerk deutschen Designs. Entdecken Sie den legendären Füllfederhalter mit 14-Karat-Goldfeder und lebenslanger Qualität.',
-    },
-  },
-  {
     slug: 'le-creuset-braeter',
     name: 'Le Creuset Signature Bräter',
     brand: 'Le Creuset',
@@ -115,7 +63,7 @@ Es gibt kaum ein anderes Küchenutensil, das so oft vererbt wird wie ein Le Creu
       'Für alle Herdarten inkl. Induktion',
       'Ofenfest bis 260°C',
     ],
-    relatedSlugs: ['moccamaster', 'lamy-2000'],
+    relatedSlugs: ['kitchenaid-artisan', 'peugeot-pfeffermuehle-paris'],
     seo: {
       title: 'Le Creuset Bräter – Französische Handwerkskunst seit 1925',
       description:
@@ -172,55 +120,6 @@ Die Bedale passt zum Spaziergang mit dem Hund genauso wie zum Business-Casual im
     },
   },
   {
-    slug: 'moccamaster',
-    name: 'Moccamaster KBG Select',
-    brand: 'Technivorm Moccamaster',
-    tagline: 'Kaffee, wie er sein sollte',
-    teaser:
-      'Handgefertigt in den Niederlanden. Der Moccamaster brüht Kaffee bei perfekten 92-96°C – für Geschmack, den keine Kapselmaschine erreicht.',
-    description: `
-In einer Welt von Kapselmaschinen und Vollautomaten ist der Moccamaster eine Anomalie: Eine Filterkaffeemaschine, handgefertigt in den Niederlanden, die seit 1968 nahezu unverändert gebaut wird. Warum? Weil Perfektion keine Verbesserung braucht.
-
-## Die Wissenschaft des perfekten Kaffees
-
-**Das Geheimnis der Temperatur**
-Der Moccamaster erreicht innerhalb von Sekunden die ideale Brühtemperatur von 92-96°C – und hält sie konstant. Die meisten günstigen Kaffeemaschinen schaffen das nicht. Das Ergebnis: Optimale Extraktion, voller Geschmack, keine Bitterkeit.
-
-**Der 6-Minuten-Standard**
-Die Specialty Coffee Association empfiehlt eine Brühzeit von 4-6 Minuten für Filterkaffee. Der Moccamaster ist darauf kalibriert und erfüllt als eine von wenigen Maschinen die SCA-Zertifizierung.
-
-**Kupfer statt Kunststoff**
-Das Heizelement aus Kupfer überträgt die Wärme effizienter als jedes andere Material. Es ist langlebiger, präziser und macht den Unterschied, den Sie schmecken können.
-
-## Handarbeit aus Amerongen
-
-Jeder Moccamaster wird von Hand montiert, getestet und signiert. Gerard-Clement Smit gründete Technivorm 1964 mit der Vision, die beste Kaffeemaschine der Welt zu bauen. 60 Jahre später hat sich daran nichts geändert.
-
-## Die ehrliche Alternative
-
-Ein Moccamaster kostet etwa 300€. Eine Kapselmaschine kostet 100€ – plus 30-50 Cent pro Kapsel. Nach 1.000 Tassen haben Sie mit dem Moccamaster über 200€ gespart. Nach 5.000 Tassen über 1.000€. Und der Moccamaster funktioniert dann immer noch.
-    `,
-    image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80',
-    price: '299,00 €',
-    affiliateUrl: 'https://www.amazon.de/dp/B07NQ7WKXH',
-    category: 'Küche',
-    heritage: 'Seit 1968',
-    warranty: '5 Jahre',
-    madeIn: 'Niederlande',
-    features: [
-      'SCA-zertifiziert',
-      'Kupfer-Heizelement',
-      'Brühtemperatur 92-96°C',
-      'Handgefertigt in Amerongen',
-    ],
-    relatedSlugs: ['le-creuset-braeter', 'lamy-2000'],
-    seo: {
-      title: 'Moccamaster KBG Select – Die beste Filterkaffeemaschine',
-      description:
-        'Der Moccamaster KBG Select brüht Kaffee bei perfekter Temperatur. Handgefertigt in Holland, mit 5 Jahren Garantie.',
-    },
-  },
-  {
     slug: 'rimowa-original',
     name: 'Rimowa Original Cabin',
     brand: 'Rimowa',
@@ -262,11 +161,452 @@ Mit Preisen ab 800€ ist ein Rimowa keine kleine Anschaffung. Aber rechnen wir:
       'TSA-Schlösser integriert',
       'Flex-Divider-System',
     ],
-    relatedSlugs: ['barbour-bedale', 'lamy-2000'],
+    relatedSlugs: ['barbour-bedale', 'le-creuset-braeter'],
     seo: {
       title: 'Rimowa Original Cabin – Deutscher Luxuskoffer seit 1898',
       description:
         'Der Rimowa Original Cabin ist ein Meisterwerk deutscher Ingenieurskunst. Aluminium, Handarbeit, lebenslanger Service.',
+    },
+  },
+  {
+    slug: 'opinel-no8',
+    name: 'Opinel No. 8',
+    brand: 'Opinel',
+    tagline: 'Das französische Taschenmesser mit Seele',
+    teaser:
+      'Seit 1890 unverändert. Das Opinel No. 8 vereint französische Handwerkskunst mit schlichter Eleganz – ein Messer, das Generationen begleitet.',
+    description: `
+In den französischen Alpen, im kleinen Dorf Chambéry, begann Joseph Opinel 1890 damit, Messer zu fertigen. 134 Jahre später wird das Opinel No. 8 noch immer in der gleichen Weise hergestellt – und ist zum meistverkauften Taschenmesser Frankreichs geworden.
+
+## Warum das Opinel No. 8?
+
+**Perfekte Einfachheit**
+Ein Griff aus Buchenholz. Eine Klinge aus Kohlenstoffstahl. Ein genialer Sicherheitsmechanismus. Das Opinel beweist, dass großartiges Design nicht kompliziert sein muss. Es tut genau das, was es soll – und das perfekt.
+
+**Die Virobloc-Sicherung**
+1955 erfunden, verhindert der drehbare Ring am Griffansatz, dass sich die Klinge unbeabsichtigt öffnet oder schließt. Ein simples, aber geniales Detail, das bis heute unverändert funktioniert.
+
+**Ein Messer, das Patina erzählt**
+Anders als polierter Edelstahl entwickelt der Buchenholzgriff mit der Zeit eine einzigartige Maserung. Die Kohlenstoffstahlklinge nimmt Gebrauchsspuren auf. Jedes Opinel wird zu einem Unikat mit Geschichte.
+
+## Für Kenner
+
+Pablo Picasso nutzte ein Opinel zum Skulpturieren. Alain Ducasse empfiehlt es in seiner Küche. Das Victoria and Albert Museum zeigt es als Designikone. Und doch kostet es weniger als ein Restaurantbesuch.
+
+## Die ehrliche Wahl
+
+Für etwa 15€ bekommen Sie ein Messer, das ein Leben lang hält. Kein Marketing-Budget, keine Star-Designer, keine Gimmicks. Nur über 130 Jahre Erfahrung in der Kunst, ein perfektes Messer zu fertigen.
+    `,
+    image: 'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=800&q=80',
+    price: '16,90 €',
+    affiliateUrl: 'https://www.amazon.de/dp/B002SCUO04',
+    category: 'Küche',
+    heritage: 'Seit 1890',
+    warranty: 'Lebenslange Garantie auf die Klinge',
+    madeIn: 'Frankreich',
+    features: [
+      'Kohlenstoffstahl-Klinge (12C27)',
+      'Buchenholz-Griff',
+      'Virobloc-Sicherheitsring',
+      'Handgefertigt in Chambéry',
+    ],
+    relatedSlugs: ['guede-brotmesser', 'laguiole-steakmesser'],
+    seo: {
+      title: 'Opinel No. 8 – Das legendäre französische Taschenmesser seit 1890',
+      description:
+        'Das Opinel No. 8 ist ein Klassiker französischer Messerschmiedekunst. Handgefertigt in Savoyen, Buchenholzgriff, lebenslange Qualität.',
+    },
+  },
+  {
+    slug: 'bialetti-moka-express',
+    name: 'Bialetti Moka Express',
+    brand: 'Bialetti',
+    tagline: 'Der Espressokocher, der Italien eroberte',
+    teaser:
+      'Seit 1933 steht der kleine Mann mit Schnurrbart auf fast jedem italienischen Herd. Die Moka Express ist mehr als eine Kaffeekanne – sie ist italienische Lebensart.',
+    description: `
+1933 hatte Alfonso Bialetti eine Idee: Espresso für zu Hause, ohne teure Maschinen. Er beobachtete seine Frau beim Wäschewaschen mit einer Lisciveuse – einem Kessel, der heißes Wasser durch die Wäsche drückt – und übertrug das Prinzip auf Kaffee. Die Moka Express war geboren.
+
+## Warum die Bialetti?
+
+**Physik, die funktioniert**
+Das Prinzip ist genial einfach: Wasser im unteren Behälter wird erhitzt, der entstehende Dampfdruck presst es durch das Kaffeepulver nach oben. Keine Elektronik, keine Verschleißteile, keine Schwachstellen. Nur Aluminium, Druck und Hitze.
+
+**Design für die Ewigkeit**
+Das Art-Déco-Design mit dem ikonischen achteckigen Körper hat sich seit 1933 nicht verändert. Warum auch? Es funktioniert, es sieht gut aus, es liegt perfekt in der Hand. Der kleine Mann mit Schnurrbart – „l'omino con i baffi" – ist zum Symbol italienischer Kaffeekultur geworden.
+
+**In 90% aller italienischen Haushalte**
+Das ist keine Marketing-Übertreibung, sondern Statistik. Die Moka Express ist so selbstverständlich wie der Kühlschrank. Sie gehört zur Familie.
+
+## Die Rechnung, die aufgeht
+
+Eine Moka Express für 6 Tassen kostet etwa 35€. Ein Espresso im Café kostet 1,50€. Nach 24 Espressi hat sich die Moka bezahlt – und funktioniert dann noch jahrzehntelang weiter. Ersatzteile gibt es überall, und sie kosten Centbeträge.
+
+## Das Ritual zählt
+
+Morgens den unteren Behälter mit Wasser füllen, das Kaffeepulver einfüllen, die Kanne auf den Herd stellen und warten, bis sie zu blubbern beginnt. Das ist kein Zeitverlust – das ist der Moment, in dem der Tag beginnt.
+    `,
+    image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80',
+    price: '34,90 €',
+    affiliateUrl: 'https://www.amazon.de/dp/B0000AN3QI',
+    category: 'Küche',
+    heritage: 'Seit 1933',
+    warranty: '2 Jahre',
+    madeIn: 'Italien',
+    features: [
+      'Aluminium-Guss',
+      'Für alle Herdarten (nicht Induktion)',
+      'Patentiertes Sicherheitsventil',
+      'Ergonomischer Griff',
+    ],
+    relatedSlugs: ['gmundner-keramik-fruehstueck', 'duralex-picardie'],
+    seo: {
+      title: 'Bialetti Moka Express – Der originale italienische Espressokocher',
+      description:
+        'Die Bialetti Moka Express ist seit 1933 das Symbol italienischer Kaffeekultur. Aluminium-Guss, zeitloses Design, perfekter Espresso.',
+    },
+  },
+  {
+    slug: 'peugeot-pfeffermuehle-paris',
+    name: 'Peugeot Paris Pfeffermühle',
+    brand: 'Peugeot',
+    tagline: 'Das Original seit 1874',
+    teaser:
+      'Bevor Peugeot Autos baute, perfektionierten sie Mahlwerke. Die Paris-Mühle ist die Urform aller modernen Pfeffermühlen – und noch immer unübertroffen.',
+    description: `
+1810 begann die Familie Peugeot mit der Herstellung von Sägeblättern und Federn. 1840 erkannten sie, dass ihr gehärteter Stahl perfekt für Kaffeemühlen geeignet war. 1874 entstand die erste Pfeffermühle – und revolutionierte die Küche für immer.
+
+## Warum Peugeot?
+
+**Das Mahlwerk, das alles veränderte**
+Das doppelte Helix-Mahlwerk aus gehärtetem Stahl zerreibt Pfefferkörner, statt sie zu zerquetschen. Das Ergebnis: Die ätherischen Öle bleiben erhalten, das Aroma entfaltet sich voll. Kein anderes Mahlwerk kommt der Präzision eines Peugeot gleich.
+
+**Lebenslange Garantie auf das Mahlwerk**
+Peugeot gibt lebenslange Garantie auf das Mahlwerk – nicht weil sie großzügig sind, sondern weil sie wissen, dass es nicht kaputt geht. Viele Peugeot-Mühlen aus den 1950ern funktionieren heute noch tadellos.
+
+**Die schwarze Eleganz**
+Das Paris u'Select Modell in mattem Schwarz ist die zeitlose Wahl. Der Mahlgrad lässt sich stufenlos einstellen – von grob für Steaks bis fein für Saucen. Ein Detail, das günstige Mühlen nicht bieten.
+
+## Das Werkzeug der Profis
+
+In Sterneküchen stehen Peugeot-Mühlen. Nicht als Dekoration, sondern als Arbeitswerkzeug. Wenn jede Sekunde zählt und jedes Detail schmeckt, vertraut man auf das Beste.
+
+## Salz und Pfeffer – ein System
+
+Peugeot bietet passende Salz- und Pfeffermühlen im gleichen Design. Das Salzmahlwerk ist speziell für die korrosive Eigenschaft von Salz angepasst – ein Detail, das bei günstigeren Mühlen oft übersehen wird.
+    `,
+    image: 'https://images.unsplash.com/photo-1599909533681-74e3d1151543?w=800&q=80',
+    price: '44,90 €',
+    affiliateUrl: 'https://www.amazon.de/dp/B001E5E0Y2',
+    category: 'Küche',
+    heritage: 'Seit 1874',
+    warranty: 'Lebenslange Garantie auf das Mahlwerk',
+    madeIn: 'Frankreich',
+    features: [
+      'Gehärtetes Stahlmahlwerk',
+      'u\'Select Mahlgradeinstellung',
+      'Buchenholz lackiert',
+      '18 cm Höhe',
+    ],
+    relatedSlugs: ['le-creuset-braeter', 'opinel-no8'],
+    seo: {
+      title: 'Peugeot Paris Pfeffermühle – Das Original seit 1874',
+      description:
+        'Die Peugeot Paris Pfeffermühle setzt seit 1874 den Standard. Gehärtetes Stahlmahlwerk mit lebenslanger Garantie, handgefertigt in Frankreich.',
+    },
+  },
+  {
+    slug: 'kitchenaid-artisan',
+    name: 'KitchenAid Artisan Küchenmaschine',
+    brand: 'KitchenAid',
+    tagline: 'Die Ikone der amerikanischen Küche',
+    teaser:
+      'Seit 1919 der Traum jeder Hobbyküche. Die Artisan ist keine Maschine – sie ist ein Statement. Empire Red ist die Farbe, die Küchen seit Jahrzehnten definiert.',
+    description: `
+1919 stellte Herbert Johnson die erste KitchenAid vor. Sein Ziel: Eine Maschine, die das mühsame Kneten von Hand überflüssig macht. Die Reaktion seiner Frau: „I don't care what you call it, it's the best kitchen aid I've ever had." Der Name war geboren.
+
+## Warum die KitchenAid Artisan?
+
+**Der Planetenrührwerk-Mechanismus**
+Das Rührwerk rotiert nicht nur um die eigene Achse, sondern kreist gleichzeitig um die Schüssel – wie ein Planet um die Sonne. Das Ergebnis: 67 Berührungspunkte pro Umdrehung, perfekt vermischte Teige ohne tote Winkel.
+
+**Gussmetall, kein Plastik**
+Das Gehäuse aus Zinkdruckguss wiegt über 10 kg. Das ist keine Verschwendung – es ist Stabilität. Keine Vibration beim Kneten schwerer Teige, keine Bewegung auf der Arbeitsfläche.
+
+**Ein Ökosystem an Zubehör**
+Die Artisan ist erweiterbar: Fleischwolf, Nudelaufsatz, Eisbereiter, Zitruspresse – über 15 optionale Aufsätze machen sie zum Universalwerkzeug. Einmal kaufen, immer erweitern.
+
+## Empire Red – Die Farbe, die bleibt
+
+Seit den 1950ern ist Empire Red die Signaturfarbe von KitchenAid. Ein kräftiges, selbstbewusstes Rot, das in jeder Küche zum Blickfang wird. Während Modefarben kommen und gehen, bleibt Empire Red zeitlos.
+
+## Die Investition in Ihre Küche
+
+Mit etwa 500€ ist die Artisan keine Spontankaufentscheidung. Aber sie hält 20, 30, oft 50 Jahre. In manchen Familien werden KitchenAids vererbt – mit allen Geschichten von Geburtstagskuchen, Weihnachtsplätzchen und Sonntagsbroten.
+    `,
+    image: 'https://images.unsplash.com/photo-1594385208974-2e75f8d7bb48?w=800&q=80',
+    price: '499,00 €',
+    affiliateUrl: 'https://www.amazon.de/dp/B00CPLGFTO',
+    category: 'Küche',
+    heritage: 'Seit 1919',
+    warranty: '5 Jahre (EU), optional 10 Jahre',
+    madeIn: 'USA',
+    features: [
+      'Planetenrührwerk',
+      'Zinkdruckguss-Gehäuse',
+      '4,8 Liter Edelstahlschüssel',
+      '10 Geschwindigkeitsstufen',
+    ],
+    relatedSlugs: ['le-creuset-braeter', 'guede-brotmesser'],
+    seo: {
+      title: 'KitchenAid Artisan Empire Red – Die legendäre Küchenmaschine',
+      description:
+        'Die KitchenAid Artisan in Empire Red ist seit 1919 das Herzstück amerikanischer Küchen. Planetenrührwerk, Gussmetall, 5 Jahre Garantie.',
+    },
+  },
+  {
+    slug: 'guede-brotmesser',
+    name: 'Güde Alpha Olive Brotmesser',
+    brand: 'Güde',
+    tagline: 'Solinger Schärfe trifft mediterranes Holz',
+    teaser:
+      'Handgeschmiedet in Solingen seit 1910. Das Güde Brotmesser mit Olivenholzgriff verbindet deutsche Klingenkunst mit der Wärme des Mittelmeers.',
+    description: `
+In Solingen, der Klingenstadt, schmiedet die Familie Güde seit 1910 Messer nach alter Tradition. Jedes Messer durchläuft über 60 Arbeitsschritte – die meisten davon von Hand. Das Alpha Olive Brotmesser ist die Krönung dieser Handwerkskunst.
+
+## Warum Güde?
+
+**Handgeschmiedet, nicht gestanzt**
+Während Industriemesser aus Stahlplatten gestanzt werden, wird jede Güde-Klinge einzeln geschmiedet. Der Unterschied: Die Molekularstruktur des Stahls verdichtet sich, die Klinge wird härter, die Schärfe hält länger.
+
+**Die Wellenschliff-Perfektion**
+Der Wellenschliff eines Güde-Brotmessers ist nicht einfach „gezackt" – jede Welle ist präzise geschliffen, um Brotkruste zu durchdringen, ohne die weiche Krume zu zerdrücken. Das Ergebnis: Saubere Scheiben, kein Zerbröseln.
+
+**Olivenholz aus Kalabrien**
+Der Griff aus kalabrischem Olivenholz ist nicht nur schön – er ist funktional. Olivenholz ist dichter als andere Hölzer, nimmt weniger Feuchtigkeit auf und entwickelt mit der Zeit eine einzigartige Maserung.
+
+## Das Messer fürs Leben
+
+Ein Güde-Messer wird mit einem Echtheitszertifikat geliefert. Jedes trägt die Signatur des Schmieds. Bei sachgemäßer Pflege hält es mehrere Generationen – und wird dabei immer besser, weil es sich Ihrer Hand anpasst.
+
+## Die Solinger Tradition
+
+Solingen ist seit dem Mittelalter das Zentrum der deutschen Klingenproduktion. „Made in Solingen" ist ein geschütztes Qualitätssiegel, das nur Messer tragen dürfen, die vollständig in der Stadt gefertigt wurden.
+    `,
+    image: 'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=800&q=80',
+    price: '189,00 €',
+    affiliateUrl: 'https://www.amazon.de/dp/B001RIYR78',
+    category: 'Küche',
+    heritage: 'Seit 1910',
+    warranty: '3 Jahre + lebenslanger Nachschleifservice',
+    madeIn: 'Deutschland (Solingen)',
+    features: [
+      'Handgeschmiedete Klinge',
+      'Olivenholzgriff aus Kalabrien',
+      'Wellenschliff',
+      '32 cm Gesamtlänge',
+    ],
+    relatedSlugs: ['opinel-no8', 'laguiole-steakmesser'],
+    seo: {
+      title: 'Güde Alpha Olive Brotmesser – Handgeschmiedet in Solingen',
+      description:
+        'Das Güde Alpha Olive Brotmesser vereint Solinger Schmiedekunst mit kalabrischem Olivenholz. Handgeschmiedet, wellenschliff, ein Leben lang.',
+    },
+  },
+  {
+    slug: 'laguiole-steakmesser',
+    name: 'Laguiole en Aubrac Steakmesser',
+    brand: 'Forge de Laguiole',
+    tagline: 'Das Messer aus dem Herzen Frankreichs',
+    teaser:
+      'Handgefertigt im Aveyron. Jedes Laguiole-Steakmesser mit Olivenholzgriff ist ein Unikat – geschmiedet von Meistern, die ihr Handwerk seit 1829 perfektionieren.',
+    description: `
+Im Hochland des Aubrac, im französischen Zentralmassiv, liegt das Dorf Laguiole. Hier, wo die Winter hart und die Sommer kurz sind, entwickelten Hirten im 19. Jahrhundert ein Messer, das allen Bedingungen standhält. Heute ist „Laguiole" weltweit ein Synonym für französische Messerkunst.
+
+## Warum Laguiole en Aubrac?
+
+**Die Biene als Zeichen**
+Das charakteristische Bienenmotiv auf dem Griffrücken ist das Erkennungszeichen echter Laguiole-Messer. Die Biene – eigentlich eine stilisierte Fliege – symbolisiert Fleiß und Ausdauer der Handwerker.
+
+**Olivenholz: Jedes Stück ein Unikat**
+Das Olivenholz für die Griffe stammt aus der Provence. Jeder Griff zeigt eine einzigartige Maserung – kein Messer gleicht dem anderen. Mit der Zeit dunkelt das Holz nach und entwickelt eine warme Patina.
+
+**Handarbeit vom Schmied bis zur Politur**
+Ein echtes Laguiole en Aubrac durchläuft über 100 Arbeitsschritte. Vom Schmieden der Klinge über das Feilen der Biene bis zur finalen Politur – alles geschieht in Handarbeit, im Dorf Laguiole selbst.
+
+## Das perfekte Steakmesser
+
+Die Klinge aus französischem Sandvik-Stahl ist hart genug, um scharf zu bleiben, und weich genug, um nachgeschliffen zu werden. Sie gleitet durch ein Entrecôte wie durch Butter – und hinterlässt saubere Schnitte, die das Fleisch nicht zerreißen.
+
+## Ein Geschenk mit Bedeutung
+
+In Frankreich schenkt man Laguiole-Messer traditionell zu besonderen Anlässen. Zur Hochzeit, zum Berufseinstieg, zur Pensionierung. Das 6er-Set ist die klassische Wahl für den gedeckten Tisch.
+    `,
+    image: 'https://images.unsplash.com/photo-1566454419290-57a64afe1e5b?w=800&q=80',
+    price: '289,00 €',
+    affiliateUrl: 'https://www.amazon.de/dp/B07D4BQRJ9',
+    category: 'Küche',
+    heritage: 'Seit 1829',
+    warranty: '5 Jahre',
+    madeIn: 'Frankreich (Aubrac)',
+    features: [
+      'Sandvik-Stahlklinge',
+      'Olivenholzgriff',
+      'Bienen-Intarsie',
+      '6er-Set mit Holzkassette',
+    ],
+    relatedSlugs: ['guede-brotmesser', 'opinel-no8'],
+    seo: {
+      title: 'Laguiole en Aubrac Steakmesser – Französische Handwerkskunst',
+      description:
+        'Laguiole en Aubrac Steakmesser mit Olivenholzgriff. Handgeschmiedet in Frankreich, 6er-Set in Holzkassette, für Genießer.',
+    },
+  },
+  {
+    slug: 'duralex-picardie',
+    name: 'Duralex Picardie Gläser',
+    brand: 'Duralex',
+    tagline: '80 Jahre französische Glaskunst',
+    teaser:
+      'Das Glas aus der Schulkantine, das zum Designklassiker wurde. Duralex Picardie ist unzerbrechlich, stapelbar und zeitlos – seit 1945.',
+    description: `
+1945, kurz nach Ende des Zweiten Weltkriegs, begann Duralex in La Chapelle-Saint-Mesmin mit der Produktion von gehärtetem Glas. Das Ziel: Gläser, die nicht zerbrechen. Die Picardie-Serie wurde zum Inbegriff französischer Alltagskultur.
+
+## Warum Duralex?
+
+**Gehärtetes Glas: Fast unzerbrechlich**
+Das Tempern-Verfahren macht Duralex-Gläser 2,5-mal stärker als normales Glas. Sie widerstehen Stößen, Stürzen und extremen Temperaturschwankungen. Falls sie doch einmal brechen, zerfallen sie in stumpfe Stücke statt scharfe Splitter.
+
+**Das Design, das bleibt**
+Die charakteristische Form mit den feinen Rillen und der nach oben verjüngten Silhouette wurde nie verändert. Sie liegt perfekt in der Hand, stapelt sich platzsparend und sieht auf jedem Tisch gut aus – vom Bistro bis zum Fine Dining.
+
+**Made in France, nicht in China**
+Während viele Glashersteller die Produktion nach Asien verlagert haben, fertigt Duralex noch immer in Frankreich. 2022 wurde das Unternehmen von der Belegschaft übernommen – ein Bekenntnis zur lokalen Produktion.
+
+## Das Glas für alles
+
+Wasser, Wein, Kaffee, Saft – die Picardie funktioniert für alles. In französischen Cafés ist sie Standard. In skandinavischen Designmagazinen wird sie gefeiert. Auf Ihrem Tisch macht sie einfach Sinn.
+
+## 80 Jahre Jubiläum
+
+Die Picardie-Gläser zum 80. Jubiläum sind eine Hommage an die ursprüngliche Version. Das 25cl-Format ist das vielseitigste – groß genug für ein Glas Wein, klein genug für einen Espresso mit Wasser.
+    `,
+    image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80',
+    price: '24,90 €',
+    affiliateUrl: 'https://www.amazon.de/dp/B00004S1CQ',
+    category: 'Küche',
+    heritage: 'Seit 1945',
+    warranty: '10 Jahre gegen Produktionsfehler',
+    madeIn: 'Frankreich',
+    features: [
+      'Gehärtetes Glas (Temperglas)',
+      '25cl Fassungsvermögen',
+      'Stapelbar',
+      '6er-Set',
+    ],
+    relatedSlugs: ['riedel-veloce', 'bialetti-moka-express'],
+    seo: {
+      title: 'Duralex Picardie Gläser – Französischer Klassiker seit 1945',
+      description:
+        'Duralex Picardie 25cl: Das ikonische französische Trinkglas. Gehärtet, stapelbar, zeitlos. 6er-Set, Made in France.',
+    },
+  },
+  {
+    slug: 'riedel-veloce',
+    name: 'Riedel Veloce Pinot Noir Gläser',
+    brand: 'Riedel',
+    tagline: 'Glas für Kenner, nicht für Angeber',
+    teaser:
+      'Die 11. Generation einer österreichischen Glasmacherfamilie. Riedel Veloce bringt das Beste aus jedem Pinot Noir – durch Form, die Wissenschaft ist.',
+    description: `
+1756 gründete Johann Christoph Riedel eine Glashütte in Böhmen. Seitdem hat die Familie Riedel die Kunst des Weinglases perfektioniert. Die 11. Generation, Georg Riedel, revolutionierte in den 1970ern die Branche mit der Erkenntnis: Die Form des Glases verändert den Geschmack des Weins.
+
+## Warum Riedel Veloce?
+
+**Die Wissenschaft der Form**
+Die bauchige Form des Veloce Pinot Noir ist nicht zufällig. Sie sammelt die flüchtigen Aromen, lenkt den Wein auf die richtige Stelle der Zunge und lässt ihn optimal atmen. Das ist keine Marketing-Behauptung – es ist durch Blindverkostungen belegt.
+
+**Maschinengeblasen, aber exzellent**
+Anders als die mundgeblasene Sommeliers-Serie wird die Veloce-Serie maschinell gefertigt. Das macht sie erschwinglicher – ohne Kompromisse bei der Glasqualität. Das kristallklare Material ist bleifrei und spülmaschinenfest.
+
+**Für Pinot Noir optimiert**
+Pinot Noir ist eine anspruchsvolle Rebsorte. Zu kleine Gläser ersticken die feinen Aromen. Zu große lassen sie verfliegen. Der Veloce Pinot Noir ist exakt auf die Charakteristik dieser Traube abgestimmt.
+
+## Die Investition in Genuss
+
+Ein 2er-Set Riedel Veloce kostet etwa 60€. Das klingt nach viel für Weingläser. Aber wenn Sie eine Flasche Burgunder für 40€ öffnen, ist das richtige Glas keine Ausgabe – es ist Respekt vor dem Wein.
+
+## Für Einsteiger und Kenner
+
+Die Veloce-Serie ist Riedels Empfehlung für Menschen, die guten Wein trinken, aber nicht in die Sommeliers-Preisklasse investieren möchten. Die Qualität ist professionell, der Preis vernünftig.
+    `,
+    image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80',
+    price: '59,90 €',
+    affiliateUrl: 'https://www.amazon.de/dp/B07YQKP91Q',
+    category: 'Küche',
+    heritage: 'Seit 1756',
+    warranty: '2 Jahre',
+    madeIn: 'Österreich',
+    features: [
+      'Bleifreies Kristallglas',
+      'Maschinengeblasen',
+      'Spülmaschinenfest',
+      '2er-Set, 763ml',
+    ],
+    relatedSlugs: ['duralex-picardie', 'laguiole-steakmesser'],
+    seo: {
+      title: 'Riedel Veloce Pinot Noir Gläser – Österreichische Glaskunst',
+      description:
+        'Riedel Veloce Pinot Noir: Weingläser, die Wissenschaft und Genuss verbinden. Bleifreies Kristall, 2er-Set, seit 1756.',
+    },
+  },
+  {
+    slug: 'gmundner-keramik-fruehstueck',
+    name: 'Gmundner Keramik Frühstücksbecher',
+    brand: 'Gmundner Keramik',
+    tagline: 'Österreichische Handarbeit für den perfekten Morgen',
+    teaser:
+      'Der bordeauxrote Hirsch auf weißer Keramik – handgemalt in Gmunden seit 1492. Ein Frühstücksbecher, der Tradition und Gemütlichkeit vereint.',
+    description: `
+Am Traunsee in Oberösterreich liegt Gmunden – und hier wird seit über 500 Jahren Keramik gefertigt. Die Gmundner Keramik ist keine Fabrikware, sondern echte Handarbeit: Jedes Stück wird von Hand gedreht, bemalt und glasiert.
+
+## Warum Gmundner Keramik?
+
+**Handarbeit seit 1492**
+Jeder Frühstücksbecher durchläuft 30 Arbeitsschritte. Von der Tonaufbereitung über das Drehen auf der Scheibe bis zum finalen Brennen bei 1.100°C – alles geschieht in der Manufaktur am Traunsee.
+
+**Der Hirsch: Symbol der Alpen**
+Das Dekor „Roter Hirsch" ist ein Klassiker der Gmundner Keramik. Der bordeauxrote Hirsch auf cremefarbenem Grund verbindet alpine Tradition mit zeitloser Eleganz. In österreichischen Bauernhäusern genauso zu Hause wie in modernen Stadtküchen.
+
+**Jeden Tag ein bisschen Luxus**
+Ein Frühstück aus dem Gmundner Becher ist anders. Das Gewicht der Keramik in der Hand, die Wärme, die sie speichert, der Anblick des handgemalten Dekors – das verwandelt den Kaffee am Morgen in ein kleines Ritual.
+
+## Für zwei
+
+Das klassische Set für zwei Personen macht den Morgen zu einem gemeinsamen Moment. Ob Kaffee, Tee oder heiße Schokolade – der großzügige Becher fasst 300ml und hält den Inhalt lange warm.
+
+## Ein Stück Österreich
+
+Gmundner Keramik wird nicht exportiert, um billig verkauft zu werden. Sie ist ein österreichisches Qualitätsprodukt, das seinen Preis wert ist. Die handgemalten Dekore machen jedes Stück zum Unikat – kleine Unterschiede sind keine Fehler, sondern Zeichen echter Handarbeit.
+    `,
+    image: 'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800&q=80',
+    price: '39,00 €',
+    affiliateUrl: 'https://www.amazon.de/dp/B009MP04ZK',
+    category: 'Küche',
+    heritage: 'Seit 1492',
+    warranty: '2 Jahre',
+    madeIn: 'Österreich (Gmunden)',
+    features: [
+      'Handgedreht und handbemalt',
+      'Dekor: Roter Hirsch',
+      '300ml Fassungsvermögen',
+      'Spülmaschinen- und mikrowellengeeignet',
+    ],
+    relatedSlugs: ['bialetti-moka-express', 'duralex-picardie'],
+    seo: {
+      title: 'Gmundner Keramik Frühstücksbecher Roter Hirsch – Handarbeit aus Österreich',
+      description:
+        'Gmundner Keramik Frühstücksbecher mit Roter Hirsch Dekor. Handgedreht und handbemalt am Traunsee, österreichische Tradition seit 1492.',
     },
   },
 ]

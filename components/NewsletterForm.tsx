@@ -4,9 +4,25 @@ import { useState, FormEvent } from 'react'
 
 interface NewsletterFormProps {
   variant?: 'hero' | 'section'
+  campaign?: string // Campaign identifier for tagging (e.g., 'valentinstag-2025')
+  source?: string // Page source for tracking (e.g., 'homepage', 'product-page')
 }
 
-export default function NewsletterForm({ variant = 'section' }: NewsletterFormProps) {
+// Declare Plausible type for window
+declare global {
+  interface Window {
+    plausible?: (
+      event: string,
+      options?: { props?: Record<string, string | number> }
+    ) => void
+  }
+}
+
+export default function NewsletterForm({
+  variant = 'section',
+  campaign,
+  source = 'homepage',
+}: NewsletterFormProps) {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [message, setMessage] = useState('')
@@ -19,7 +35,11 @@ export default function NewsletterForm({ variant = 'section' }: NewsletterFormPr
       const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          email,
+          tags: campaign ? [campaign] : [],
+          referrer: source,
+        }),
       })
 
       const data = await response.json()
@@ -28,6 +48,17 @@ export default function NewsletterForm({ variant = 'section' }: NewsletterFormPr
         setStatus('success')
         setMessage('Willkommen! Überprüfen Sie Ihren Posteingang.')
         setEmail('')
+
+        // Track successful signup with Plausible
+        if (typeof window !== 'undefined' && window.plausible) {
+          window.plausible('newsletter_signup', {
+            props: {
+              source: source,
+              campaign: campaign || 'organic',
+              variant: variant,
+            },
+          })
+        }
       } else {
         setStatus('error')
         setMessage(data.error || 'Ein Fehler ist aufgetreten.')

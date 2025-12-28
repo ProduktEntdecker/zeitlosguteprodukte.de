@@ -9,6 +9,17 @@ interface AffiliateLinkProps {
   children: ReactNode
   variant?: 'button' | 'text' | 'card'
   className?: string
+  campaign?: string // Campaign identifier for tracking (e.g., 'valentinstag-2025')
+}
+
+// Declare Plausible type for window
+declare global {
+  interface Window {
+    plausible?: (
+      event: string,
+      options?: { props?: Record<string, string | number> }
+    ) => void
+  }
 }
 
 /**
@@ -27,28 +38,45 @@ export default function AffiliateLink({
   children,
   variant = 'button',
   className = '',
+  campaign,
 }: AffiliateLinkProps) {
   // Build UTM parameters
   const utmParams = new URLSearchParams({
-    utm_source: 'zeitloseprodukte',
+    utm_source: 'zeitlosguteprodukte',
     utm_medium: 'affiliate',
-    utm_campaign: `product-${productSlug}`,
+    utm_campaign: campaign || `product-${productSlug}`,
     utm_content: variant,
   })
 
   // Append UTM to URL
   const trackedUrl = `${href}${href.includes('?') ? '&' : '?'}${utmParams.toString()}`
 
-  // Track click event (can be extended with analytics)
+  // Track click event with Plausible Analytics
   const handleClick = () => {
-    // Google Analytics event (if gtag is available)
-    if (typeof window !== 'undefined' && 'gtag' in window) {
-      ;(window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'affiliate_click', {
-        event_category: 'affiliate',
-        event_label: productName,
-        product_slug: productSlug,
-        link_variant: variant,
+    // Plausible Analytics event
+    if (typeof window !== 'undefined' && window.plausible) {
+      window.plausible('affiliate_click', {
+        props: {
+          product: productSlug,
+          product_name: productName,
+          variant: variant,
+          campaign: campaign || 'organic',
+        },
       })
+    }
+
+    // Google Analytics event (fallback if gtag is available)
+    if (typeof window !== 'undefined' && 'gtag' in window) {
+      ;(window as unknown as { gtag: (...args: unknown[]) => void }).gtag(
+        'event',
+        'affiliate_click',
+        {
+          event_category: 'affiliate',
+          event_label: productName,
+          product_slug: productSlug,
+          link_variant: variant,
+        }
+      )
     }
 
     // Console log for development
@@ -57,6 +85,7 @@ export default function AffiliateLink({
         product: productName,
         slug: productSlug,
         variant,
+        campaign: campaign || 'organic',
         url: trackedUrl,
       })
     }

@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
+import Script from 'next/script'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import AffiliateLink, {
@@ -15,6 +16,10 @@ import {
   getRelatedProducts,
   getAllProductSlugs,
 } from '@/lib/products'
+import {
+  generateProductSchema,
+  generateBreadcrumbSchema,
+} from '@/lib/schema'
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>
@@ -77,8 +82,29 @@ export default async function ProductPage({ params }: ProductPageProps) {
   // Parse markdown-style content to HTML-like sections
   const contentSections = product.description.split('\n\n').filter(Boolean)
 
+  // Generate JSON-LD schemas for SEO
+  const productUrl = `https://zeitlosguteprodukte.de/produkte/${product.slug}`
+  const productSchema = generateProductSchema(product, productUrl)
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Startseite', url: 'https://zeitlosguteprodukte.de' },
+    { name: 'Produkte', url: 'https://zeitlosguteprodukte.de/#produkte' },
+    { name: product.name, url: productUrl },
+  ])
+
   return (
     <>
+      {/* JSON-LD Structured Data for SEO */}
+      <Script
+        id="product-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <Header />
 
       <main className="pt-24">
