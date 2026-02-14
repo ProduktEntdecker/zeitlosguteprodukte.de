@@ -5,7 +5,7 @@ Disallow: /api/
 Disallow: /_next/
 
 # Host
-Host: https://zeitloseprodukte.de
+Host: https://zeitlosguteprodukte.de
 
 # Sitemaps
-Sitemap: https://zeitloseprodukte.de/sitemap.xml
+Sitemap: https://zeitlosguteprodukte.de/sitemap.xml
