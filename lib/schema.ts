@@ -1,8 +1,9 @@
 import { Product } from './products'
+import { CONTACT_INFO, DOMAIN_INFO } from './contact-constants'
 
 /**
- * JSON-LD Schema generators for SEO
- * Implements schema.org structured data for products, breadcrumbs, and organization
+ * JSON-LD Schema generators for SEO and AI visibility
+ * Implements schema.org structured data for products, breadcrumbs, organization, and website
  */
 
 export function generateProductSchema(product: Product, url: string) {
@@ -37,11 +38,27 @@ export function generateProductSchema(product: Product, url: string) {
       name: product.madeIn,
     },
     category: product.category,
-    additionalProperty: product.features.map((feature) => ({
-      '@type': 'PropertyValue',
-      name: 'Feature',
-      value: feature,
-    })),
+    additionalProperty: [
+      ...product.features.map((feature) => ({
+        '@type': 'PropertyValue' as const,
+        name: 'Feature',
+        value: feature,
+      })),
+      {
+        '@type': 'PropertyValue' as const,
+        name: 'Heritage',
+        value: product.heritage,
+      },
+      {
+        '@type': 'PropertyValue' as const,
+        name: 'Warranty',
+        value: product.warranty,
+      },
+    ],
+    manufacturer: {
+      '@type': 'Organization',
+      name: product.brand,
+    },
   }
 }
 
@@ -65,17 +82,29 @@ export function generateOrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Zeitlos Gute Produkte',
-    url: 'https://zeitlosguteprodukte.de',
-    logo: 'https://zeitlosguteprodukte.de/logo.png',
+    url: DOMAIN_INFO.url,
+    logo: `${DOMAIN_INFO.url}/logo.png`,
     description:
-      'Kuratierte Auswahl zeitloser Qualitätsprodukte, die Generationen überdauern.',
-    sameAs: [],
+      'Kuratierte Auswahl zeitloser Qualitätsprodukte, die Generationen überdauern. Von Lamy über Le Creuset bis Rimowa – handverlesene Klassiker, die ein Leben lang halten.',
+    foundingDate: '2024',
+    founder: {
+      '@type': 'Person',
+      name: CONTACT_INFO.name,
+    },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: CONTACT_INFO.street,
+      postalCode: CONTACT_INFO.postalCode,
+      addressLocality: CONTACT_INFO.city,
+      addressCountry: 'DE',
+    },
     contactPoint: {
       '@type': 'ContactPoint',
-      email: 'info@zeitlosguteprodukte.de',
+      email: CONTACT_INFO.email,
       contactType: 'customer service',
       availableLanguage: 'German',
     },
+    sameAs: [],
   }
 }
 
@@ -84,18 +113,39 @@ export function generateWebsiteSchema() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Zeitlos Gute Produkte',
-    url: 'https://zeitlosguteprodukte.de',
+    url: DOMAIN_INFO.url,
     description:
-      'Entdecke handverlesene Produkte, die Generationen überdauern.',
+      'Entdecke handverlesene Produkte, die Generationen überdauern. Qualitätsprodukte von Traditionsmarken wie Le Creuset, Barbour, Rimowa und mehr.',
     inLanguage: 'de-DE',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: 'https://zeitlosguteprodukte.de/?search={search_term_string}',
-      },
-      'query-input': 'required name=search_term_string',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Zeitlos Gute Produkte',
+      url: DOMAIN_INFO.url,
     },
+  }
+}
+
+/**
+ * Generates an ItemList schema for the homepage product listing.
+ * Helps AI systems understand the curated product catalog.
+ */
+export function generateItemListSchema(productItems: { name: string; slug: string; description: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Zeitlose Klassiker – Unsere Produktempfehlungen',
+    description: 'Handverlesene Qualitätsprodukte, die Generationen überdauern. Kuratiert nach Langlebigkeit, Handwerkskunst und zeitlosem Design.',
+    numberOfItems: productItems.length,
+    itemListElement: productItems.map((product, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Product',
+        name: product.name,
+        url: `${DOMAIN_INFO.url}/produkte/${product.slug}`,
+        description: product.description,
+      },
+    })),
   }
 }
 

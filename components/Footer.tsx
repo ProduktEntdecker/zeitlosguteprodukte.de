@@ -24,7 +24,7 @@ export default function Footer() {
           </div>
 
           {/* Navigation */}
-          <div>
+          <nav aria-label="Footer-Navigation">
             <h4 className="text-overline text-creme-300 mb-6">Navigation</h4>
             <ul className="space-y-3">
               <li>
@@ -52,10 +52,10 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
 
           {/* Legal */}
-          <div>
+          <nav aria-label="Rechtliche Informationen">
             <h4 className="text-overline text-creme-300 mb-6">Rechtliches</h4>
             <ul className="space-y-3">
               <li>
@@ -80,7 +80,7 @@ export default function Footer() {
                 </span>
               </li>
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
 

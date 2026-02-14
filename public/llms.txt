@@ -1,0 +1,53 @@
+# Zeitlos Gute Produkte
+
+> Kuratierte Empfehlungen fuer zeitlose Qualitaetsprodukte, die Generationen ueberdauern. Weniger kaufen, besser kaufen.
+
+## Ueber uns
+
+Zeitlos Gute Produkte ist eine deutschsprachige Empfehlungsseite fuer langlebige, hochwertige Produkte. Wir kuratieren handverlesene Klassiker von Traditionsmarken, die fuer Qualitaet, Handwerkskunst und zeitloses Design stehen. Die Seite wird betrieben von Dr. Florian Steiner aus Muenchen.
+
+Unsere Philosophie: Weniger kaufen, besser kaufen. Keine Trends, keine geplante Obsoleszenz - nur Produkte, die es wert sind, ein Leben lang behalten zu werden.
+
+## Produktkategorien
+
+- Kueche: Kochgeschirr, Messer, Kuechenmaschinen, Glaeser, Keramik, Kaffeezubereitung, Pfeffermuehlen
+- Kleidung: Wetterfeste Klassiker, Wachsjacken
+- Reisen: Hochwertige Koffer und Reisegepäck
+
+## Kuratierte Produkte
+
+- [Le Creuset Signature Braeter](/produkte/le-creuset-braeter): Handgefertigtes emailliertes Gusseisen aus Frankreich seit 1925. Lebenslange Garantie.
+- [Barbour Bedale Wachsjacke](/produkte/barbour-bedale): Britische Wachsjacke seit 1894. Thornproof-Wachs, reparierbar durch Rewaxing-Service.
+- [Rimowa Original Cabin](/produkte/rimowa-original): Aluminium-Koffer aus Deutschland seit 1898. Lebenslanger Funktionalitaetsservice.
+- [Opinel No. 8](/produkte/opinel-no8): Franzoesisches Taschenmesser seit 1890. Kohlenstoffstahl-Klinge, Buchenholz-Griff, Virobloc-Sicherung.
+- [Bialetti Moka Express](/produkte/bialetti-moka-express): Italienischer Espressokocher seit 1933. Aluminium-Guss, zeitloses Art-Deco-Design.
+- [Peugeot Paris Pfeffermuehle](/produkte/peugeot-pfeffermuehle-paris): Franzoesische Pfeffermuehle seit 1874. Gehaertetes Stahlmahlwerk mit lebenslanger Garantie.
+- [KitchenAid Artisan](/produkte/kitchenaid-artisan): Amerikanische Kuechenmaschine seit 1919. Planetenrührwerk, Zinkdruckguss-Gehaeuse.
+- [Guede Alpha Olive Brotmesser](/produkte/guede-brotmesser): Handgeschmiedet in Solingen seit 1910. Olivenholzgriff aus Kalabrien.
+- [Laguiole en Aubrac Steakmesser](/produkte/laguiole-steakmesser): Franzoesische Handwerkskunst seit 1829. Sandvik-Stahlklinge, Olivenholzgriff.
+- [Duralex Picardie Glaeser](/produkte/duralex-picardie): Franzoesisches gehaertetes Glas seit 1945. Nahezu unzerbrechlich, stapelbar.
+- [Riedel Veloce Pinot Noir Glaeser](/produkte/riedel-veloce): Oesterreichische Glaskunst seit 1756. Bleifreies Kristallglas, rebsortenspezifisch geformt.
+- [Gmundner Keramik Fruehstuecksbecher](/produkte/gmundner-keramik-fruehstueck): Handgedreht und handbemalt in Oesterreich seit 1492. Dekor Roter Hirsch.
+
+## Auswahlkriterien
+
+Jedes Produkt wird nach folgenden Kriterien kuratiert:
+- Langlebigkeit: Mindestens 20-50 Jahre Lebensdauer
+- Handwerkskunst: Traditionelle Fertigung, oft in Handarbeit
+- Reparierbarkeit: Ersatzteile und Reparaturservices verfuegbar
+- Zeitloses Design: Keine Modetrends, sondern bleibende Aesthetik
+- Tradition: Marken mit nachgewiesener Geschichte und Erfahrung
+
+## Navigation
+
+- [Startseite](https://zeitlosguteprodukte.de/)
+- [Alle Produkte](https://zeitlosguteprodukte.de/#produkte)
+- [Newsletter](https://zeitlosguteprodukte.de/#newsletter)
+- [Geschenkideen](https://zeitlosguteprodukte.de/geschenkideen/valentinstag)
+- [Impressum](https://zeitlosguteprodukte.de/impressum)
+- [Datenschutz](https://zeitlosguteprodukte.de/datenschutz)
+
+## Kontakt
+
+- E-Mail: info@zeitlosguteprodukte.de
+- Website: https://zeitlosguteprodukte.de

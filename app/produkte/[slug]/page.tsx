@@ -111,7 +111,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         {/* Breadcrumb */}
         <div className="bg-creme-100 border-b border-navy-100">
           <div className="container-editorial py-4">
-            <nav className="flex items-center gap-2 text-sm">
+            <nav className="flex items-center gap-2 text-sm" aria-label="Brotkrümelnavigation">
               <Link
                 href="/"
                 className="text-navy-500 hover:text-cognac-600 transition-colors"

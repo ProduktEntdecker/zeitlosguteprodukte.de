@@ -1,12 +1,25 @@
+import Script from 'next/script'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import NewsletterForm from '@/components/NewsletterForm'
 import ProductCard from '@/components/ProductCard'
 import { products } from '@/lib/products'
+import { generateItemListSchema } from '@/lib/schema'
 
 export default function HomePage() {
+  const itemListSchema = generateItemListSchema(
+    products.map((p) => ({ name: p.name, slug: p.slug, description: p.teaser }))
+  )
+
   return (
     <>
+      {/* JSON-LD: ItemList mit allen kuratierten Produkten */}
+      <Script
+        id="itemlist-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+
       <Header />
 
       <main>

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import Script from 'next/script'
+import { generateWebsiteSchema, generateOrganizationSchema } from '@/lib/schema'
 import './globals.css'
 
 const inter = Inter({
@@ -94,9 +95,24 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const websiteSchema = generateWebsiteSchema()
+  const organizationSchema = generateOrganizationSchema()
+
   return (
     <html lang="de" className={`${inter.variable} ${playfair.variable}`}>
       <body className="min-h-screen">
+        {/* JSON-LD Structured Data: WebSite + Organization (global, auf jeder Seite) */}
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+
         {/* Noise texture overlay for premium feel */}
         <div className="noise-overlay" aria-hidden="true" />
 

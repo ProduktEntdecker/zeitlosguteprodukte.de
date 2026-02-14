@@ -23,7 +23,7 @@ export default function Header() {
           : 'bg-transparent py-6'
       }`}
     >
-      <nav className="container-editorial flex items-center justify-between">
+      <nav className="container-editorial flex items-center justify-between" aria-label="Hauptnavigation">
         {/* Logo */}
         <Link
           href="/"
