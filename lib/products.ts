@@ -50,7 +50,7 @@ Ein Le Creuset Bräter kostet zwischen 250€ und 400€. Das klingt nach viel �
 
 Es gibt kaum ein anderes Küchenutensil, das so oft vererbt wird wie ein Le Creuset. In vielen Familien sind Bräter aus den 1950ern noch im täglichen Einsatz. Das ist nachhaltiger Konsum in seiner schönsten Form.
     `,
-    image: 'https://images.unsplash.com/photo-1584990347449-a8f1d78f7fbc?w=800&q=80',
+    image: '/images/products/le-creuset-braeter.webp',
     price: '299,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B00005QFQ5',
     category: 'Küche',
@@ -99,7 +99,7 @@ Barbour hält drei Royal Warrants – Hoflieferantenpatente von Queen Elizabeth 
 
 Die Bedale passt zum Spaziergang mit dem Hund genauso wie zum Business-Casual im Büro. Mit einem guten Pullover darunter ist sie im Herbst perfekt, mit Innenfutter meistert sie den Winter. Sie ist nicht modisch – sie ist zeitlos.
     `,
-    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80',
+    image: '/images/products/barbour-bedale.webp',
     price: '319,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B008J3VTVW',
     category: 'Kleidung',
@@ -148,7 +148,7 @@ Rimowa bietet einen lebenslangen Funktionalitätsservice. Räder, Griffe, Schlö
 
 Mit Preisen ab 800€ ist ein Rimowa keine kleine Anschaffung. Aber rechnen wir: Bei 20 Jahren Nutzung und zwei Reisen pro Jahr sind das 20€ pro Reise. Für einen Koffer, der Ihre Sachen schützt, leicht zu manövrieren ist und jede Sicherheitskontrolle übersteht.
     `,
-    image: 'https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=800&q=80',
+    image: '/images/products/rimowa-original.webp',
     price: '880,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B07PNMK8VG',
     category: 'Reisen',
@@ -197,7 +197,7 @@ Pablo Picasso nutzte ein Opinel zum Skulpturieren. Alain Ducasse empfiehlt es in
 
 Für etwa 15€ bekommen Sie ein Messer, das ein Leben lang hält. Kein Marketing-Budget, keine Star-Designer, keine Gimmicks. Nur über 130 Jahre Erfahrung in der Kunst, ein perfektes Messer zu fertigen.
     `,
-    image: 'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=800&q=80',
+    image: '/images/products/opinel-no8.webp',
     price: '16,90 €',
     affiliateUrl: 'https://www.amazon.de/dp/B002SCUO04',
     category: 'Küche',
@@ -246,7 +246,7 @@ Eine Moka Express für 6 Tassen kostet etwa 35€. Ein Espresso im Café kostet 
 
 Morgens den unteren Behälter mit Wasser füllen, das Kaffeepulver einfüllen, die Kanne auf den Herd stellen und warten, bis sie zu blubbern beginnt. Das ist kein Zeitverlust – das ist der Moment, in dem der Tag beginnt.
     `,
-    image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80',
+    image: '/images/products/bialetti-moka-express.webp',
     price: '34,90 €',
     affiliateUrl: 'https://www.amazon.de/dp/B0000AN3QI',
     category: 'Küche',
@@ -295,7 +295,7 @@ In Sterneküchen stehen Peugeot-Mühlen. Nicht als Dekoration, sondern als Arbei
 
 Peugeot bietet passende Salz- und Pfeffermühlen im gleichen Design. Das Salzmahlwerk ist speziell für die korrosive Eigenschaft von Salz angepasst – ein Detail, das bei günstigeren Mühlen oft übersehen wird.
     `,
-    image: 'https://images.unsplash.com/photo-1599909533681-74e3d1151543?w=800&q=80',
+    image: '/images/products/peugeot-pfeffermuehle-paris.webp',
     price: '44,90 €',
     affiliateUrl: 'https://www.amazon.de/dp/B001E5E0Y2',
     category: 'Küche',
@@ -344,7 +344,7 @@ Seit den 1950ern ist Empire Red die Signaturfarbe von KitchenAid. Ein kräftiges
 
 Mit etwa 500€ ist die Artisan keine Spontankaufentscheidung. Aber sie hält 20, 30, oft 50 Jahre. In manchen Familien werden KitchenAids vererbt – mit allen Geschichten von Geburtstagskuchen, Weihnachtsplätzchen und Sonntagsbroten.
     `,
-    image: 'https://images.unsplash.com/photo-1594385208974-2e75f8d7bb48?w=800&q=80',
+    image: '/images/products/kitchenaid-artisan.webp',
     price: '499,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B00CPLGFTO',
     category: 'Küche',
@@ -393,7 +393,7 @@ Ein Güde-Messer wird mit einem Echtheitszertifikat geliefert. Jedes trägt die 
 
 Solingen ist seit dem Mittelalter das Zentrum der deutschen Klingenproduktion. „Made in Solingen" ist ein geschütztes Qualitätssiegel, das nur Messer tragen dürfen, die vollständig in der Stadt gefertigt wurden.
     `,
-    image: 'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=800&q=80',  // Platzhalterbild - Herstelleranfrage nötig
     price: '189,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B001RIYR78',
     category: 'Küche',
@@ -442,7 +442,7 @@ Die Klinge aus französischem Sandvik-Stahl ist hart genug, um scharf zu bleiben
 
 In Frankreich schenkt man Laguiole-Messer traditionell zu besonderen Anlässen. Zur Hochzeit, zum Berufseinstieg, zur Pensionierung. Das 6er-Set ist die klassische Wahl für den gedeckten Tisch.
     `,
-    image: 'https://images.unsplash.com/photo-1566454419290-57a64afe1e5b?w=800&q=80',
+    image: '/images/products/laguiole-steakmesser.webp',
     price: '289,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B07D4BQRJ9',
     category: 'Küche',
@@ -491,7 +491,7 @@ Wasser, Wein, Kaffee, Saft – die Picardie funktioniert für alles. In französ
 
 Die Picardie-Gläser zum 80. Jubiläum sind eine Hommage an die ursprüngliche Version. Das 25cl-Format ist das vielseitigste – groß genug für ein Glas Wein, klein genug für einen Espresso mit Wasser.
     `,
-    image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80',
+    image: '/images/products/duralex-picardie.webp',
     price: '24,90 €',
     affiliateUrl: 'https://www.amazon.de/dp/B00004S1CQ',
     category: 'Küche',
@@ -540,7 +540,7 @@ Ein 2er-Set Riedel Veloce kostet etwa 60€. Das klingt nach viel für Weingläs
 
 Die Veloce-Serie ist Riedels Empfehlung für Menschen, die guten Wein trinken, aber nicht in die Sommeliers-Preisklasse investieren möchten. Die Qualität ist professionell, der Preis vernünftig.
     `,
-    image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80',  // Platzhalterbild - Herstelleranfrage nötig
     price: '59,90 €',
     affiliateUrl: 'https://www.amazon.de/dp/B07YQKP91Q',
     category: 'Küche',
@@ -589,7 +589,7 @@ Das klassische Set für zwei Personen macht den Morgen zu einem gemeinsamen Mome
 
 Gmundner Keramik wird nicht exportiert, um billig verkauft zu werden. Sie ist ein österreichisches Qualitätsprodukt, das seinen Preis wert ist. Die handgemalten Dekore machen jedes Stück zum Unikat – kleine Unterschiede sind keine Fehler, sondern Zeichen echter Handarbeit.
     `,
-    image: 'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800&q=80',
+    image: '/images/products/gmundner-keramik-fruehstueck.webp',
     price: '39,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B009MP04ZK',
     category: 'Küche',
