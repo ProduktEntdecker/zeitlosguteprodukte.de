@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://zeitloseprodukte.de',
+  siteUrl: process.env.SITE_URL || 'https://zeitlosguteprodukte.de',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   changefreq: 'weekly',

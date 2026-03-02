@@ -131,7 +131,7 @@ export async function POST(request: NextRequest) {
           utm_source: 'website',
           utm_medium: 'organic',
           utm_campaign: 'newsletter_signup',
-          referring_site: 'zeitloseprodukte.de',
+          referring_site: 'zeitlosguteprodukte.de',
         }),
       }
     )
