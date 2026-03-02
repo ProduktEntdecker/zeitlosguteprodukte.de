@@ -50,7 +50,7 @@ export async function generateMetadata({
       title: product.seo.title,
       description: product.seo.description,
       type: 'article',
-      url: `https://zeitloseprodukte.de/produkte/${product.slug}`,
+      url: `https://zeitlosguteprodukte.de/produkte/${product.slug}`,
       images: [
         {
           url: product.image,
