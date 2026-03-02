@@ -5,6 +5,7 @@ import NewsletterForm from '@/components/NewsletterForm'
 import ProductCard from '@/components/ProductCard'
 import { products } from '@/lib/products'
 import { generateItemListSchema } from '@/lib/schema'
+import { safeJsonLd } from '@/lib/json-ld'
 
 export default function HomePage() {
   const itemListSchema = generateItemListSchema(
@@ -17,7 +18,7 @@ export default function HomePage() {
       <Script
         id="itemlist-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(itemListSchema) }}
       />
 
       <Header />

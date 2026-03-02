@@ -13,6 +13,7 @@ import {
   getAllCollectionSlugs,
 } from '@/lib/collections'
 import { generateCollectionSchema, generateBreadcrumbSchema } from '@/lib/schema'
+import { safeJsonLd } from '@/lib/json-ld'
 
 interface CollectionPageProps {
   params: Promise<{ slug: string }>
@@ -93,12 +94,12 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
       <Script
         id="collection-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(collectionSchema) }}
       />
       <Script
         id="breadcrumb-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbSchema) }}
       />
 
       <Header />

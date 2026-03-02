@@ -393,7 +393,7 @@ Ein Güde-Messer wird mit einem Echtheitszertifikat geliefert. Jedes trägt die 
 
 Solingen ist seit dem Mittelalter das Zentrum der deutschen Klingenproduktion. „Made in Solingen" ist ein geschütztes Qualitätssiegel, das nur Messer tragen dürfen, die vollständig in der Stadt gefertigt wurden.
     `,
-    image: 'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=800&q=80',  // Platzhalterbild - Herstelleranfrage nötig
+    image: 'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=800&q=80', // TODO: Ersetzen durch Herstellerbild (Güde Solingen kontaktieren)
     price: '189,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B001RIYR78',
     category: 'Küche',
@@ -540,7 +540,7 @@ Ein 2er-Set Riedel Veloce kostet etwa 60€. Das klingt nach viel für Weingläs
 
 Die Veloce-Serie ist Riedels Empfehlung für Menschen, die guten Wein trinken, aber nicht in die Sommeliers-Preisklasse investieren möchten. Die Qualität ist professionell, der Preis vernünftig.
     `,
-    image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80',  // Platzhalterbild - Herstelleranfrage nötig
+    image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80', // TODO: Ersetzen durch Herstellerbild (Riedel kontaktieren)
     price: '59,90 €',
     affiliateUrl: 'https://www.amazon.de/dp/B07YQKP91Q',
     category: 'Küche',

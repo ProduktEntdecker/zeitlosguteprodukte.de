@@ -104,7 +104,6 @@ export function generateOrganizationSchema() {
       contactType: 'customer service',
       availableLanguage: 'German',
     },
-    sameAs: [],
   }
 }
 
@@ -168,7 +167,7 @@ export function generateCollectionSchema(collection: CollectionSchemaInput) {
       item: {
         '@type': 'Product',
         name: product.name,
-        url: `https://zeitlosguteprodukte.de/produkte/${product.slug}`,
+        url: `${DOMAIN_INFO.url}/produkte/${product.slug}`,
       },
     })),
   }

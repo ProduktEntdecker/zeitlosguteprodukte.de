@@ -20,6 +20,8 @@ import {
   generateProductSchema,
   generateBreadcrumbSchema,
 } from '@/lib/schema'
+import { safeJsonLd } from '@/lib/json-ld'
+import { getImageCredit } from '@/lib/image-credits'
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>
@@ -78,6 +80,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   }
 
   const relatedProducts = getRelatedProducts(product)
+  const imageCredit = getImageCredit(product.slug)
 
   // Parse markdown-style content to HTML-like sections
   const contentSections = product.description.split('\n\n').filter(Boolean)
@@ -97,12 +100,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <Script
         id="product-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(productSchema) }}
       />
       <Script
         id="breadcrumb-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbSchema) }}
       />
 
       <Header />
@@ -152,6 +155,32 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     {product.heritage}
                   </span>
                 </div>
+
+                {/* Image credit for CC-licensed images */}
+                {imageCredit && imageCredit.source === 'wikimedia' && (
+                  <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm px-3 py-1.5">
+                    <p className="text-[10px] text-white/80">
+                      Bild:{' '}
+                      <a
+                        href={imageCredit.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline hover:text-white"
+                      >
+                        {imageCredit.author}
+                      </a>
+                      {' / '}
+                      <a
+                        href={imageCredit.licenseUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline hover:text-white"
+                      >
+                        {imageCredit.license}
+                      </a>
+                    </p>
+                  </div>
+                )}
               </div>
 
               {/* Content */}
