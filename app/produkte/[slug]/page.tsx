@@ -15,6 +15,7 @@ import {
   getProductBySlug,
   getRelatedProducts,
   getAllProductSlugs,
+  getCategoryBySlug,
 } from '@/lib/products'
 import {
   generateProductSchema,
@@ -88,9 +89,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
   // Generate JSON-LD schemas for SEO
   const productUrl = `https://zeitlosguteprodukte.de/produkte/${product.slug}`
   const productSchema = generateProductSchema(product, productUrl)
+  const category = getCategoryBySlug(product.categorySlug)
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Startseite', url: 'https://zeitlosguteprodukte.de' },
-    { name: 'Produkte', url: 'https://zeitlosguteprodukte.de/#produkte' },
+    {
+      name: category?.name ?? 'Produkte',
+      url: category
+        ? `https://zeitlosguteprodukte.de/kategorie/${category.slug}`
+        : 'https://zeitlosguteprodukte.de/#produkte',
+    },
     { name: product.name, url: productUrl },
   ])
 
@@ -123,10 +130,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </Link>
               <span className="text-navy-300">/</span>
               <Link
-                href="/#produkte"
+                href={category ? `/kategorie/${category.slug}` : '/#produkte'}
                 className="text-navy-500 hover:text-cognac-600 transition-colors"
               >
-                Produkte
+                {category?.name ?? 'Produkte'}
               </Link>
               <span className="text-navy-300">/</span>
               <span className="text-navy-700">{product.name}</span>
