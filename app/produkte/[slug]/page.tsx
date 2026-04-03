@@ -358,7 +358,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                       {product.price}
                     </p>
                     <AffiliateLink
-                      href={product.affiliateUrl}
+                      href={`/go/${product.slug}`}
                       productSlug={product.slug}
                       productName={product.name}
                       variant="button"
