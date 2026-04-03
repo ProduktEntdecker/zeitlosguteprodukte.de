@@ -48,8 +48,9 @@ export default function AffiliateLink({
     utm_content: variant,
   })
 
-  // Append UTM to URL
-  const trackedUrl = `${href}${href.includes('?') ? '&' : '?'}${utmParams.toString()}`
+  // Skip client-side UTM for /go/ links (UTM is added server-side in the route handler)
+  const isGoLink = href.startsWith('/go/')
+  const trackedUrl = isGoLink ? href : `${href}${href.includes('?') ? '&' : '?'}${utmParams.toString()}`
 
   // Track click event with Plausible Analytics
   const handleClick = () => {

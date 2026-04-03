@@ -358,14 +358,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
                       {product.price}
                     </p>
                     <AffiliateLink
-                      href={product.affiliateUrl}
+                      href={`/go/${product.slug}`}
                       productSlug={product.slug}
                       productName={product.name}
                       variant="button"
                       className="w-full justify-center bg-cognac-600 hover:bg-cognac-500"
                     >
-                      Bei Amazon kaufen
+                      Bei Amazon kaufen*
                     </AffiliateLink>
+                    <p className="text-xs text-creme-100/60 mt-3">
+                      * Affiliate-Link — wir erhalten eine kleine Provision, für Sie entstehen keine Mehrkosten.
+                    </p>
                   </div>
                 </div>
               </aside>
