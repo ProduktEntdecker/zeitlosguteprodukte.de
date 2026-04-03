@@ -15,11 +15,9 @@ import {
   getProductBySlug,
   getRelatedProducts,
   getAllProductSlugs,
+  getCategoryBySlug,
 } from '@/lib/products'
-import {
-  generateProductSchema,
-  generateBreadcrumbSchema,
-} from '@/lib/schema'
+import { generateProductSchema, generateBreadcrumbSchema } from '@/lib/schema'
 import { safeJsonLd } from '@/lib/json-ld'
 import { getImageCredit } from '@/lib/image-credits'
 
@@ -88,9 +86,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
   // Generate JSON-LD schemas for SEO
   const productUrl = `https://zeitlosguteprodukte.de/produkte/${product.slug}`
   const productSchema = generateProductSchema(product, productUrl)
+  const category = getCategoryBySlug(product.categorySlug)
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Startseite', url: 'https://zeitlosguteprodukte.de' },
-    { name: 'Produkte', url: 'https://zeitlosguteprodukte.de/#produkte' },
+    {
+      name: category?.name ?? 'Produkte',
+      url: category
+        ? `https://zeitlosguteprodukte.de/kategorie/${category.slug}`
+        : 'https://zeitlosguteprodukte.de/#produkte',
+    },
     { name: product.name, url: productUrl },
   ])
 
@@ -114,7 +118,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
         {/* Breadcrumb */}
         <div className="bg-creme-100 border-b border-navy-100">
           <div className="container-editorial py-4">
-            <nav className="flex items-center gap-2 text-sm" aria-label="Brotkrümelnavigation">
+            <nav
+              className="flex items-center gap-2 text-sm"
+              aria-label="Brotkrümelnavigation"
+            >
               <Link
                 href="/"
                 className="text-navy-500 hover:text-cognac-600 transition-colors"
@@ -123,10 +130,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </Link>
               <span className="text-navy-300">/</span>
               <Link
-                href="/#produkte"
+                href={category ? `/kategorie/${category.slug}` : '/#produkte'}
                 className="text-navy-500 hover:text-cognac-600 transition-colors"
               >
-                Produkte
+                {category?.name ?? 'Produkte'}
               </Link>
               <span className="text-navy-300">/</span>
               <span className="text-navy-700">{product.name}</span>
@@ -283,7 +290,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
                   // Check if it's a list
                   if (section.startsWith('- ')) {
-                    const items = section.split('\n').filter((line) => line.startsWith('- '))
+                    const items = section
+                      .split('\n')
+                      .filter((line) => line.startsWith('- '))
                     return (
                       <ul key={index} className="my-6 space-y-3">
                         {items.map((item, i) => (
@@ -312,7 +321,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                           </strong>
                         ) : (
                           part
-                        )
+                        ),
                       )}
                     </p>
                   )
@@ -351,24 +360,19 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
                   {/* Buy Card */}
                   <div className="bg-navy-900 p-6 text-white">
-                    <p className="text-overline text-cognac-400 mb-2">
-                      Überzeugt?
-                    </p>
+                    <p className="text-overline text-cognac-400 mb-2">Überzeugt?</p>
                     <p className="font-serif text-xl text-white mb-4">
                       {product.price}
                     </p>
                     <AffiliateLink
-                      href={`/go/${product.slug}`}
+                      href={product.affiliateUrl}
                       productSlug={product.slug}
                       productName={product.name}
                       variant="button"
                       className="w-full justify-center bg-cognac-600 hover:bg-cognac-500"
                     >
-                      Bei Amazon kaufen*
+                      Bei Amazon kaufen
                     </AffiliateLink>
-                    <p className="text-xs text-creme-100/60 mt-3">
-                      * Affiliate-Link — wir erhalten eine kleine Provision, für Sie entstehen keine Mehrkosten.
-                    </p>
                   </div>
                 </div>
               </aside>
