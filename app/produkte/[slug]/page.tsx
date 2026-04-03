@@ -239,7 +239,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                       variant="button"
                       className="w-full justify-center"
                     >
-                      Jetzt kaufen bei Amazon
+                      Jetzt kaufen bei Amazon*
                     </AffiliateLink>
                   </div>
 
@@ -364,8 +364,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
                       variant="button"
                       className="w-full justify-center bg-cognac-600 hover:bg-cognac-500"
                     >
-                      Bei Amazon kaufen
+                      Bei Amazon kaufen*
                     </AffiliateLink>
+                    <p className="text-xs text-creme-100/60 mt-3">
+                      * Affiliate-Link — für Sie entstehen keine Mehrkosten.
+                    </p>
                   </div>
                 </div>
               </aside>
