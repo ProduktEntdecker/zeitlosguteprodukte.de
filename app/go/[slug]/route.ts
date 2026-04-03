@@ -12,15 +12,20 @@ export async function GET(
   const product = products.find((p) => p.slug === slug)
 
   if (!product || !product.affiliateUrl) {
-    return NextResponse.redirect(new URL('/', request.url), 302)
+    return new NextResponse('Not Found', { status: 404 })
   }
 
-  const url = new URL(product.affiliateUrl)
+  let url: URL
+  try {
+    url = new URL(product.affiliateUrl)
+  } catch {
+    return new NextResponse('Not Found', { status: 404 })
+  }
 
   // Security: Only redirect to allowed domains
   if (!ALLOWED_DOMAINS.includes(url.hostname)) {
     console.error(`Blocked redirect to unauthorized domain: ${url.hostname}`)
-    return NextResponse.redirect(new URL('/', request.url), 302)
+    return new NextResponse('Not Found', { status: 404 })
   }
 
   url.searchParams.set('utm_source', 'zeitlosguteprodukte.de')
