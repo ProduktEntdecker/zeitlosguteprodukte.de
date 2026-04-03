@@ -118,7 +118,7 @@ export async function POST(request: NextRequest) {
         },
         body: JSON.stringify({
           email: normalizedEmail,
-          listIds: [2],
+          listIds: [env.brevo.listId],
           updateEnabled: true,
         }),
       }
