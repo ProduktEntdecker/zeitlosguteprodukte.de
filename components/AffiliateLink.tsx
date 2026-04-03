@@ -40,16 +40,20 @@ export default function AffiliateLink({
   className = '',
   campaign,
 }: AffiliateLinkProps) {
-  // Build UTM parameters
-  const utmParams = new URLSearchParams({
-    utm_source: 'zeitlosguteprodukte',
-    utm_medium: 'affiliate',
-    utm_campaign: campaign || `product-${productSlug}`,
-    utm_content: variant,
-  })
-
-  // Append UTM to URL
-  const trackedUrl = `${href}${href.includes('?') ? '&' : '?'}${utmParams.toString()}`
+  // For internal /go/ links, UTM params are handled by the route handler
+  const isInternalRedirect = href.startsWith('/go/')
+  let trackedUrl: string
+  if (isInternalRedirect) {
+    trackedUrl = href
+  } else {
+    const utmParams = new URLSearchParams({
+      utm_source: 'zeitlosguteprodukte',
+      utm_medium: 'affiliate',
+      utm_campaign: campaign || `product-${productSlug}`,
+      utm_content: variant,
+    })
+    trackedUrl = `${href}${href.includes('?') ? '&' : '?'}${utmParams.toString()}`
+  }
 
   // Track click event with Plausible Analytics
   const handleClick = () => {

@@ -8,7 +8,7 @@ Eine kuratierte Plattform für zeitlose, hochwertige Produkte, die Generationen 
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
-- **Newsletter**: Beehiiv Integration
+- **Newsletter**: Brevo Integration (DSGVO-konform)
 - **SEO**: next-seo, next-sitemap
 - **Deployment**: Vercel
 
@@ -16,7 +16,7 @@ Eine kuratierte Plattform für zeitlose, hochwertige Produkte, die Generationen 
 
 - Responsive Landing Page mit Hero-Sektion
 - Dynamische Produktseiten mit SEO-Optimierung
-- Newsletter-Anmeldung via Beehiiv API
+- Newsletter-Anmeldung via Brevo API
 - Affiliate-Links mit UTM-Tracking
 - Automatische Sitemap-Generierung
 - Mobile-First Design
@@ -28,7 +28,7 @@ zeitloseprodukte.de/
 ├── app/
 │   ├── api/
 │   │   └── newsletter/
-│   │       └── route.ts        # Beehiiv Newsletter API
+│   │       └── route.ts        # Brevo Newsletter API
 │   ├── produkte/
 │   │   └── [slug]/
 │   │       └── page.tsx        # Dynamische Produktseiten
@@ -80,8 +80,7 @@ cp .env.example .env.local
 Bearbeiten Sie `.env.local` mit Ihren Credentials:
 
 ```env
-BEEHIIV_API_KEY=your_api_key
-BEEHIIV_PUBLICATION_ID=pub_xxxxx
+BREVO_API_KEY=your_brevo_api_key
 SITE_URL=https://zeitloseprodukte.de
 ```
 
@@ -114,8 +113,7 @@ Fügen Sie folgende Variablen in den Vercel Project Settings hinzu:
 
 | Variable                 | Description                        |
 | ------------------------ | ---------------------------------- |
-| `BEEHIIV_API_KEY`        | Ihr Beehiiv API Key                |
-| `BEEHIIV_PUBLICATION_ID` | Ihre Beehiiv Publication ID        |
+| `BREVO_API_KEY`          | Ihr Brevo API Key                  |
 | `SITE_URL`               | `https://zeitloseprodukte.de`      |
 
 ## Produkte hinzufügen
@@ -171,13 +169,13 @@ Neue Produkte werden in `lib/products.ts` hinzugefügt:
 
 Das Design verwendet großzügige Margins und Paddings für ein magazinartiges, hochwertiges Erscheinungsbild.
 
-## Newsletter (Beehiiv)
+## Newsletter (Brevo)
 
 ### API Setup
 
-1. Beehiiv Account erstellen: [beehiiv.com](https://beehiiv.com)
-2. API Key generieren unter Settings → Integrations
-3. Publication ID aus Dashboard URL kopieren
+1. Brevo Account erstellen: [brevo.com](https://brevo.com)
+2. API Key generieren unter Settings → API Keys
+3. DOI (Double Opt-In) wird über die Brevo-Konfiguration gesteuert
 
 ### Webhook Response
 
