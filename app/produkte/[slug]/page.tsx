@@ -357,6 +357,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     <p className="font-serif text-xl text-white mb-4">
                       {product.price}
                     </p>
+                    <AffiliateDisclosure className="text-xs text-creme-100/60 mb-3" />
                     <AffiliateLink
                       href={`/go/${product.slug}`}
                       productSlug={product.slug}
@@ -364,11 +365,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
                       variant="button"
                       className="w-full justify-center bg-cognac-600 hover:bg-cognac-500"
                     >
-                      Bei Amazon kaufen*
+                      Bei Amazon kaufen
                     </AffiliateLink>
-                    <p className="text-xs text-creme-100/60 mt-3">
-                      * Affiliate-Link — wir erhalten eine kleine Provision, für Sie entstehen keine Mehrkosten.
-                    </p>
                   </div>
                 </div>
               </aside>
