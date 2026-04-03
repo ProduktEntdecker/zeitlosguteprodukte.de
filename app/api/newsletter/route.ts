@@ -22,7 +22,9 @@ interface BrevoErrorResponse {
   message?: string
 }
 
-// Rate limiting: Simple in-memory store (for production, use Redis)
+// NOTE: In-memory rate limiting does not persist across Vercel Serverless invocations.
+// For production rate limiting, use Vercel WAF, Upstash Redis, or Brevo-side limits.
+// This provides basic protection during development and single-instance deployments.
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>()
 const RATE_LIMIT_MAX = 5
 const RATE_LIMIT_WINDOW = 60 * 1000 // 1 minute
@@ -84,9 +86,10 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Check for required environment variables using env config
-    if (!env.brevo.isConfigured) {
-      console.error('Missing Brevo environment variables')
+    // Check for required Brevo API key
+    const apiKey = env.brevo.apiKey
+    if (!apiKey) {
+      console.error('Missing Brevo API key')
 
       // In development, log and return success
       if (env.isDevelopment) {
@@ -105,20 +108,18 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const { apiKey } = env.brevo
-
     // Subscribe via Brevo Contacts API
     const brevoResponse = await fetch(
       'https://api.brevo.com/v3/contacts',
       {
         method: 'POST',
         headers: {
-          'api-key': apiKey!,
+          'api-key': apiKey,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           email: normalizedEmail,
-          listIds: [2],
+          listIds: [env.brevo.listId],
           updateEnabled: true,
         }),
       }
