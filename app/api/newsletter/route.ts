@@ -4,30 +4,22 @@ import { env } from '@/lib/env'
 /**
  * Newsletter Signup API Route
  *
- * Handles newsletter subscriptions via Beehiiv webhook.
+ * Handles newsletter subscriptions via Brevo (DSGVO-konform, EU-basiert).
  *
  * Required Environment Variables:
- * - BEEHIIV_API_KEY: Your Beehiiv API key
- * - BEEHIIV_PUBLICATION_ID: Your Beehiiv publication ID
+ * - BREVO_API_KEY: Your Brevo API key
  *
- * Beehiiv API Documentation:
- * https://developers.beehiiv.com/docs/v2/create-subscription
+ * Brevo API Documentation:
+ * https://developers.brevo.com/reference/createcontact
  */
 
 interface SubscriptionRequest {
   email: string
 }
 
-interface BeehiivResponse {
-  data?: {
-    id: string
-    email: string
-    status: string
-  }
-  errors?: Array<{
-    code: string
-    message: string
-  }>
+interface BrevoErrorResponse {
+  code?: string
+  message?: string
 }
 
 // Rate limiting: Simple in-memory store (for production, use Redis)
@@ -93,8 +85,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Check for required environment variables using env config
-    if (!env.beehiiv.isConfigured) {
-      console.error('Missing Beehiiv environment variables')
+    if (!env.brevo.isConfigured) {
+      console.error('Missing Brevo environment variables')
 
       // In development, log and return success
       if (env.isDevelopment) {
@@ -113,36 +105,31 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const { apiKey, publicationId } = env.beehiiv
+    const { apiKey } = env.brevo
 
-    // Subscribe to Beehiiv
-    const beehiivResponse = await fetch(
-      `https://api.beehiiv.com/v2/publications/${publicationId}/subscriptions`,
+    // Subscribe via Brevo Contacts API
+    const brevoResponse = await fetch(
+      'https://api.brevo.com/v3/contacts',
       {
         method: 'POST',
         headers: {
-          Authorization: `Bearer ${apiKey}`,
+          'api-key': apiKey!,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           email: normalizedEmail,
-          reactivate_existing: true,
-          send_welcome_email: true,
-          utm_source: 'website',
-          utm_medium: 'organic',
-          utm_campaign: 'newsletter_signup',
-          referring_site: 'zeitlosguteprodukte.de',
+          listIds: [2],
+          updateEnabled: true,
         }),
       }
     )
 
-    const beehiivData: BeehiivResponse = await beehiivResponse.json()
+    if (!brevoResponse.ok) {
+      const brevoData: BrevoErrorResponse = await brevoResponse.json()
+      console.error('Brevo API error:', brevoData)
 
-    if (!beehiivResponse.ok) {
-      console.error('Beehiiv API error:', beehiivData)
-
-      // Handle specific error cases
-      if (beehiivData.errors?.[0]?.code === 'duplicate_subscription') {
+      // Handle duplicate contact (Brevo returns "duplicate_parameter")
+      if (brevoData.code === 'duplicate_parameter') {
         return NextResponse.json({
           success: true,
           message: 'Sie sind bereits angemeldet!',

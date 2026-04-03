@@ -34,35 +34,24 @@ describe('Environment Configuration', () => {
     })
   })
 
-  describe('beehiiv configuration', () => {
-    it('reports isConfigured=true when both keys are set', async () => {
-      process.env.BEEHIIV_API_KEY = 'test-api-key'
-      process.env.BEEHIIV_PUBLICATION_ID = 'test-pub-id'
+  describe('brevo configuration', () => {
+    it('reports isConfigured=true when API key is set', async () => {
+      process.env.BREVO_API_KEY = 'test-api-key'
       const { env } = await import('@/lib/env')
-      expect(env.beehiiv.isConfigured).toBe(true)
+      expect(env.brevo.isConfigured).toBe(true)
     })
 
     it('reports isConfigured=false when API key is missing', async () => {
-      delete process.env.BEEHIIV_API_KEY
-      process.env.BEEHIIV_PUBLICATION_ID = 'test-pub-id'
+      delete process.env.BREVO_API_KEY
       const { env } = await import('@/lib/env')
-      expect(env.beehiiv.isConfigured).toBe(false)
+      expect(env.brevo.isConfigured).toBe(false)
     })
 
-    it('reports isConfigured=false when publication ID is missing', async () => {
-      process.env.BEEHIIV_API_KEY = 'test-api-key'
-      delete process.env.BEEHIIV_PUBLICATION_ID
+    it('does not throw when accessing brevo config', async () => {
+      delete process.env.BREVO_API_KEY
       const { env } = await import('@/lib/env')
-      expect(env.beehiiv.isConfigured).toBe(false)
-    })
-
-    it('does not throw when accessing beehiiv config', async () => {
-      delete process.env.BEEHIIV_API_KEY
-      delete process.env.BEEHIIV_PUBLICATION_ID
-      const { env } = await import('@/lib/env')
-      expect(() => env.beehiiv.isConfigured).not.toThrow()
-      expect(() => env.beehiiv.apiKey).not.toThrow()
-      expect(() => env.beehiiv.publicationId).not.toThrow()
+      expect(() => env.brevo.isConfigured).not.toThrow()
+      expect(() => env.brevo.apiKey).not.toThrow()
     })
   })
 
@@ -86,8 +75,7 @@ describe('Environment Configuration', () => {
     it('does not throw during module import without any env vars', async () => {
       delete process.env.SITE_URL
       delete process.env.VERCEL_URL
-      delete process.env.BEEHIIV_API_KEY
-      delete process.env.BEEHIIV_PUBLICATION_ID
+      delete process.env.BREVO_API_KEY
 
       await expect(import('@/lib/env')).resolves.toBeDefined()
     })

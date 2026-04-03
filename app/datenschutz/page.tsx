@@ -62,12 +62,12 @@ export default function DatenschutzPage() {
               </p>
 
               <h2 className="font-serif text-headline text-navy-900">
-                5. Newsletter (Beehiiv)
+                5. Newsletter (Brevo)
               </h2>
               <p>
                 Wenn Sie unseren Newsletter abonnieren, wird Ihre E-Mail-Adresse bei unserem
-                Newsletter-Dienst Beehiiv gespeichert. Beehiiv ist ein Dienst der Beehiiv Inc.,
-                USA.
+                Newsletter-Dienst Brevo gespeichert. Brevo (ehemals Sendinblue) ist ein Dienst
+                der Brevo GmbH, Deutschland / Sendinblue SAS, Frankreich (EU).
               </p>
               <p>
                 <strong>Erfasste Daten:</strong> E-Mail-Adresse, Zeitpunkt der Anmeldung,
