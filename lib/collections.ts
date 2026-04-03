@@ -29,7 +29,7 @@ export interface Collection {
     startDate: string // ISO date
     endDate: string
     ctaText: string
-    newsletterTag?: string // For Beehiiv tagging
+    newsletterTag?: string
   }
 }
 
