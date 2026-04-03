@@ -7,9 +7,8 @@ vi.mock('@/lib/env', () => ({
     siteUrl: 'https://test.com',
     isProduction: false,
     isDevelopment: true,
-    beehiiv: {
+    brevo: {
       apiKey: undefined,
-      publicationId: undefined,
       isConfigured: false,
     },
   },
@@ -57,7 +56,7 @@ describe('Newsletter API Route', () => {
       expect(data.error).toContain('gültige')
     })
 
-    it('returns success in development mode without Beehiiv config', async () => {
+    it('returns success in development mode without Brevo config', async () => {
       const { POST } = await import('@/app/api/newsletter/route')
 
       const request = new NextRequest('http://localhost:3000/api/newsletter', {

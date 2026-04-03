@@ -6,8 +6,7 @@
  */
 
 const optionalEnvVars = [
-  'BEEHIIV_API_KEY',
-  'BEEHIIV_PUBLICATION_ID',
+  'BREVO_API_KEY',
 ] as const
 
 type OptionalEnvVar = (typeof optionalEnvVars)[number]
@@ -17,17 +16,17 @@ function getEnvVar(key: string): string | undefined {
 }
 
 // Runtime warning for missing optional variables (only once per session)
-let hasWarnedAboutBeehiiv = false
-function warnMissingBeehiiv(): void {
-  if (hasWarnedAboutBeehiiv) return
+let hasWarnedAboutBrevo = false
+function warnMissingBrevo(): void {
+  if (hasWarnedAboutBrevo) return
   if (process.env.NODE_ENV === 'production') {
     const missing = optionalEnvVars.filter((key) => !getEnvVar(key))
     if (missing.length > 0) {
       console.warn(
         `⚠️  Optional environment variables not set: ${missing.join(', ')}\n` +
-          `   Newsletter signup will not work without Beehiiv credentials.`
+          `   Newsletter signup will not work without Brevo credentials.`
       )
-      hasWarnedAboutBeehiiv = true
+      hasWarnedAboutBrevo = true
     }
   }
 }
@@ -54,19 +53,13 @@ export const env = {
   siteUrl: getSiteUrl(),
   isProduction: process.env.NODE_ENV === 'production',
   isDevelopment: process.env.NODE_ENV === 'development',
-  beehiiv: {
+  brevo: {
     get apiKey() {
-      warnMissingBeehiiv()
-      return getEnvVar('BEEHIIV_API_KEY')
-    },
-    get publicationId() {
-      warnMissingBeehiiv()
-      return getEnvVar('BEEHIIV_PUBLICATION_ID')
+      warnMissingBrevo()
+      return getEnvVar('BREVO_API_KEY')
     },
     get isConfigured() {
-      return Boolean(
-        getEnvVar('BEEHIIV_API_KEY') && getEnvVar('BEEHIIV_PUBLICATION_ID')
-      )
+      return Boolean(getEnvVar('BREVO_API_KEY'))
     },
   },
 } as const
