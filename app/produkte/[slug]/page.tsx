@@ -239,7 +239,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                       variant="button"
                       className="w-full justify-center"
                     >
-                      Jetzt kaufen bei Amazon
+                      Jetzt kaufen bei Amazon*
                     </AffiliateLink>
                   </div>
 
