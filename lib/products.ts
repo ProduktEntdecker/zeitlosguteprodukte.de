@@ -13,6 +13,7 @@ export interface Product {
   warranty: string
   madeIn: string
   features: string[]
+  lastmod: string
   relatedSlugs: string[]
   seo: {
     title: string
@@ -63,6 +64,7 @@ Es gibt kaum ein anderes Küchenutensil, das so oft vererbt wird wie ein Le Creu
       'Für alle Herdarten inkl. Induktion',
       'Ofenfest bis 260°C',
     ],
+    lastmod: '2026-02-27',
     relatedSlugs: ['kitchenaid-artisan', 'peugeot-pfeffermuehle-paris'],
     seo: {
       title: 'Le Creuset Bräter – Französische Handwerkskunst seit 1925',
@@ -112,6 +114,7 @@ Die Bedale passt zum Spaziergang mit dem Hund genauso wie zum Business-Casual im
       'Zwei-Wege-Reißverschluss mit Druckknöpfen',
       'Handwärmertaschen',
     ],
+    lastmod: '2026-02-27',
     relatedSlugs: ['rimowa-original', 'le-creuset-braeter'],
     seo: {
       title: 'Barbour Bedale Wachsjacke – Britische Qualität seit 1894',
@@ -161,6 +164,7 @@ Mit Preisen ab 800€ ist ein Rimowa keine kleine Anschaffung. Aber rechnen wir:
       'TSA-Schlösser integriert',
       'Flex-Divider-System',
     ],
+    lastmod: '2026-02-27',
     relatedSlugs: ['barbour-bedale', 'le-creuset-braeter'],
     seo: {
       title: 'Rimowa Original Cabin – Deutscher Luxuskoffer seit 1898',
@@ -210,6 +214,7 @@ Für etwa 15€ bekommen Sie ein Messer, das ein Leben lang hält. Kein Marketin
       'Virobloc-Sicherheitsring',
       'Handgefertigt in Chambéry',
     ],
+    lastmod: '2026-02-27',
     relatedSlugs: ['guede-brotmesser', 'laguiole-steakmesser'],
     seo: {
       title: 'Opinel No. 8 – Das legendäre französische Taschenmesser seit 1890',
@@ -259,6 +264,7 @@ Morgens den unteren Behälter mit Wasser füllen, das Kaffeepulver einfüllen, d
       'Patentiertes Sicherheitsventil',
       'Ergonomischer Griff',
     ],
+    lastmod: '2026-02-27',
     relatedSlugs: ['gmundner-keramik-fruehstueck', 'duralex-picardie'],
     seo: {
       title: 'Bialetti Moka Express – Der originale italienische Espressokocher',
@@ -308,6 +314,7 @@ Peugeot bietet passende Salz- und Pfeffermühlen im gleichen Design. Das Salzmah
       'Buchenholz lackiert',
       '18 cm Höhe',
     ],
+    lastmod: '2026-02-27',
     relatedSlugs: ['le-creuset-braeter', 'opinel-no8'],
     seo: {
       title: 'Peugeot Paris Pfeffermühle – Das Original seit 1874',
@@ -357,6 +364,7 @@ Mit etwa 500€ ist die Artisan keine Spontankaufentscheidung. Aber sie hält 20
       '4,8 Liter Edelstahlschüssel',
       '10 Geschwindigkeitsstufen',
     ],
+    lastmod: '2026-02-27',
     relatedSlugs: ['le-creuset-braeter', 'guede-brotmesser'],
     seo: {
       title: 'KitchenAid Artisan Empire Red – Die legendäre Küchenmaschine',
@@ -406,6 +414,7 @@ Solingen ist seit dem Mittelalter das Zentrum der deutschen Klingenproduktion. �
       'Wellenschliff',
       '32 cm Gesamtlänge',
     ],
+    lastmod: '2026-02-27',
     relatedSlugs: ['opinel-no8', 'laguiole-steakmesser'],
     seo: {
       title: 'Güde Alpha Olive Brotmesser – Handgeschmiedet in Solingen',
@@ -455,6 +464,7 @@ In Frankreich schenkt man Laguiole-Messer traditionell zu besonderen Anlässen. 
       'Bienen-Intarsie',
       '6er-Set mit Holzkassette',
     ],
+    lastmod: '2026-02-27',
     relatedSlugs: ['guede-brotmesser', 'opinel-no8'],
     seo: {
       title: 'Laguiole en Aubrac Steakmesser – Französische Handwerkskunst',
@@ -504,6 +514,7 @@ Die Picardie-Gläser zum 80. Jubiläum sind eine Hommage an die ursprüngliche V
       'Stapelbar',
       '6er-Set',
     ],
+    lastmod: '2026-02-27',
     relatedSlugs: ['riedel-veloce', 'bialetti-moka-express'],
     seo: {
       title: 'Duralex Picardie Gläser – Französischer Klassiker seit 1945',
@@ -553,6 +564,7 @@ Die Veloce-Serie ist Riedels Empfehlung für Menschen, die guten Wein trinken, a
       'Spülmaschinenfest',
       '2er-Set, 763ml',
     ],
+    lastmod: '2026-02-27',
     relatedSlugs: ['duralex-picardie', 'laguiole-steakmesser'],
     seo: {
       title: 'Riedel Veloce Pinot Noir Gläser – Österreichische Glaskunst',
@@ -602,6 +614,7 @@ Gmundner Keramik wird nicht exportiert, um billig verkauft zu werden. Sie ist ei
       '300ml Fassungsvermögen',
       'Spülmaschinen- und mikrowellengeeignet',
     ],
+    lastmod: '2026-02-27',
     relatedSlugs: ['bialetti-moka-express', 'duralex-picardie'],
     seo: {
       title: 'Gmundner Keramik Frühstücksbecher Roter Hirsch – Handarbeit aus Österreich',
