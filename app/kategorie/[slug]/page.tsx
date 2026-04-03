@@ -52,7 +52,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     notFound()
   }
 
-  const categoryProducts = getProductsByCategory(category.slug as CategorySlug)
+  const categoryProducts = getProductsByCategory(category.slug)
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Startseite', url: 'https://zeitlosguteprodukte.de' },

@@ -1,8 +1,11 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Script from 'next/script'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { categories, getProductsByCategory } from '@/lib/products'
+import { generateBreadcrumbSchema } from '@/lib/schema'
+import { safeJsonLd } from '@/lib/json-ld'
 
 export const metadata: Metadata = {
   title: 'Kategorien — Zeitlos Gute Produkte',
