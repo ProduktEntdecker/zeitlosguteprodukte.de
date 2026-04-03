@@ -70,6 +70,15 @@ export default function Header() {
           </Link>
 
           <Link
+            href="/kategorie"
+            className={`hidden sm:block text-sm font-medium tracking-wide uppercase transition-colors duration-300 hover:text-cognac-600 ${
+              isScrolled ? 'text-navy-700' : 'text-navy-800'
+            }`}
+          >
+            Kategorien
+          </Link>
+
+          <Link
             href="/#newsletter"
             className={`hidden sm:block text-sm font-medium tracking-wide uppercase transition-colors duration-300 hover:text-cognac-600 ${
               isScrolled ? 'text-navy-700' : 'text-navy-800'

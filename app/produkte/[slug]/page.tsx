@@ -15,6 +15,8 @@ import {
   getProductBySlug,
   getRelatedProducts,
   getAllProductSlugs,
+  getCategorySlugForProduct,
+  getCategoryBySlug,
 } from '@/lib/products'
 import {
   generateProductSchema,
@@ -81,6 +83,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   const relatedProducts = getRelatedProducts(product)
   const imageCredit = getImageCredit(product.slug)
+  const categorySlug = getCategorySlugForProduct(product)
+  const category = categorySlug ? getCategoryBySlug(categorySlug) : undefined
 
   // Parse markdown-style content to HTML-like sections
   const contentSections = product.description.split('\n\n').filter(Boolean)
@@ -88,11 +92,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
   // Generate JSON-LD schemas for SEO
   const productUrl = `https://zeitlosguteprodukte.de/produkte/${product.slug}`
   const productSchema = generateProductSchema(product, productUrl)
-  const breadcrumbSchema = generateBreadcrumbSchema([
+  const breadcrumbItems = [
     { name: 'Startseite', url: 'https://zeitlosguteprodukte.de' },
-    { name: 'Produkte', url: 'https://zeitlosguteprodukte.de/#produkte' },
-    { name: product.name, url: productUrl },
-  ])
+  ]
+  if (category && categorySlug) {
+    breadcrumbItems.push({
+      name: category.name,
+      url: `https://zeitlosguteprodukte.de/kategorie/${categorySlug}`,
+    })
+  }
+  breadcrumbItems.push({ name: product.name, url: productUrl })
+  const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbItems)
 
   return (
     <>
@@ -121,13 +131,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
               >
                 Startseite
               </Link>
-              <span className="text-navy-300">/</span>
-              <Link
-                href="/#produkte"
-                className="text-navy-500 hover:text-cognac-600 transition-colors"
-              >
-                Produkte
-              </Link>
+              {category && categorySlug && (
+                <>
+                  <span className="text-navy-300">/</span>
+                  <Link
+                    href={`/kategorie/${categorySlug}`}
+                    className="text-navy-500 hover:text-cognac-600 transition-colors"
+                  >
+                    {category.name}
+                  </Link>
+                </>
+              )}
               <span className="text-navy-300">/</span>
               <span className="text-navy-700">{product.name}</span>
             </nav>

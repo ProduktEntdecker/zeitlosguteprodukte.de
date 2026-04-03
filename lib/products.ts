@@ -102,7 +102,7 @@ Die Bedale passt zum Spaziergang mit dem Hund genauso wie zum Business-Casual im
     image: '/images/products/barbour-bedale.webp',
     price: '319,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B008J3VTVW',
-    category: 'Kleidung',
+    category: 'Outdoor & Reisen',
     heritage: 'Seit 1894',
     warranty: '2 Jahre + Rewaxing-Service',
     madeIn: 'England',
@@ -151,7 +151,7 @@ Mit Preisen ab 800€ ist ein Rimowa keine kleine Anschaffung. Aber rechnen wir:
     image: '/images/products/rimowa-original.webp',
     price: '880,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B07PNMK8VG',
-    category: 'Reisen',
+    category: 'Outdoor & Reisen',
     heritage: 'Seit 1898',
     warranty: 'Lebenslanger Funktionalitätsservice',
     madeIn: 'Deutschland',
@@ -445,7 +445,7 @@ In Frankreich schenkt man Laguiole-Messer traditionell zu besonderen Anlässen. 
     image: '/images/products/laguiole-steakmesser.webp',
     price: '289,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B07D4BQRJ9',
-    category: 'Küche',
+    category: 'Tischkultur',
     heritage: 'Seit 1829',
     warranty: '5 Jahre',
     madeIn: 'Frankreich (Aubrac)',
@@ -494,7 +494,7 @@ Die Picardie-Gläser zum 80. Jubiläum sind eine Hommage an die ursprüngliche V
     image: '/images/products/duralex-picardie.webp',
     price: '24,90 €',
     affiliateUrl: 'https://www.amazon.de/dp/B00004S1CQ',
-    category: 'Küche',
+    category: 'Tischkultur',
     heritage: 'Seit 1945',
     warranty: '10 Jahre gegen Produktionsfehler',
     madeIn: 'Frankreich',
@@ -543,7 +543,7 @@ Die Veloce-Serie ist Riedels Empfehlung für Menschen, die guten Wein trinken, a
     image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80', // TODO: Ersetzen durch Herstellerbild (Riedel kontaktieren)
     price: '59,90 €',
     affiliateUrl: 'https://www.amazon.de/dp/B07YQKP91Q',
-    category: 'Küche',
+    category: 'Tischkultur',
     heritage: 'Seit 1756',
     warranty: '2 Jahre',
     madeIn: 'Österreich',
@@ -592,7 +592,7 @@ Gmundner Keramik wird nicht exportiert, um billig verkauft zu werden. Sie ist ei
     image: '/images/products/gmundner-keramik-fruehstueck.webp',
     price: '39,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B009MP04ZK',
-    category: 'Küche',
+    category: 'Tischkultur',
     heritage: 'Seit 1492',
     warranty: '2 Jahre',
     madeIn: 'Österreich (Gmunden)',
@@ -623,4 +623,66 @@ export function getRelatedProducts(product: Product): Product[] {
 
 export function getAllProductSlugs(): string[] {
   return products.map((p) => p.slug)
+}
+
+// --- Categories ---
+
+export interface Category {
+  slug: string
+  name: string
+  description: string
+  seo: {
+    title: string
+    description: string
+  }
+}
+
+export const categories: Category[] = [
+  {
+    slug: 'kueche',
+    name: 'Küche',
+    description: 'Zeitlose Küchenklassiker, die Generationen überdauern — von Gusseisen-Brätern bis handgeschmiedeten Messern.',
+    seo: {
+      title: 'Zeitlose Küchenprodukte — Qualität für Generationen',
+      description: 'Kuratierte Küchenklassiker von Le Creuset, KitchenAid, Güde und mehr. Produkte, die ein Leben lang halten.',
+    },
+  },
+  {
+    slug: 'tischkultur',
+    name: 'Tischkultur',
+    description: 'Handgefertigte Gläser, Keramik und Besteck — für Tischmomente, die bleiben.',
+    seo: {
+      title: 'Tischkultur — Handgefertigte Gläser, Keramik & Besteck',
+      description: 'Riedel Weingläser, Gmundner Keramik, Laguiole Steakmesser und Duralex Gläser. Tischkultur mit Tradition.',
+    },
+  },
+  {
+    slug: 'outdoor-reisen',
+    name: 'Outdoor & Reisen',
+    description: 'Bewährte Begleiter für unterwegs — wetterfest, langlebig, reparierbar.',
+    seo: {
+      title: 'Outdoor & Reisen — Langlebige Begleiter für unterwegs',
+      description: 'Barbour Wachsjacken und Rimowa Koffer. Zeitlose Qualität für Reise und Outdoor.',
+    },
+  },
+]
+
+const categorySlugMap: Record<string, string> = {
+  'Küche': 'kueche',
+  'Tischkultur': 'tischkultur',
+  'Outdoor & Reisen': 'outdoor-reisen',
+}
+
+export function getCategoryBySlug(slug: string): Category | undefined {
+  return categories.find((c) => c.slug === slug)
+}
+
+export function getProductsByCategory(categorySlug: string): Product[] {
+  const category = getCategoryBySlug(categorySlug)
+  if (!category) return []
+  return products.filter((p) => categorySlugMap[p.category] === categorySlug)
+}
+
+export function getCategorySlugForProduct(product: Product): string | undefined {
+  return categorySlugMap[product.category]
 }

@@ -45,6 +45,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/kategorie"
+                  className="text-creme-400 hover:text-white transition-colors duration-300"
+                >
+                  Kategorien
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/#newsletter"
                   className="text-creme-400 hover:text-white transition-colors duration-300"
                 >
