@@ -58,6 +58,10 @@ export const env = {
       warnMissingBrevo()
       return getEnvVar('BREVO_API_KEY')
     },
+    get listId() {
+      const id = getEnvVar('BREVO_LIST_ID')
+      return id ? parseInt(id, 10) : 2
+    },
     get isConfigured() {
       return Boolean(getEnvVar('BREVO_API_KEY'))
     },
