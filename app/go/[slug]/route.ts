@@ -9,11 +9,11 @@ export async function GET(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params
-  const product = products.find((p) => p.slug === slug)
-
-  if (!product || !product.affiliateUrl) {
+  const matches = products.filter((p) => p.slug === slug && p.affiliateUrl)
+  if (matches.length !== 1) {
     return new NextResponse('Not Found', { status: 404 })
   }
+  const product = matches[0]
 
   let url: URL
   try {
@@ -24,7 +24,7 @@ export async function GET(
 
   // Security: Only redirect to allowed HTTPS domains on standard port
   if (url.protocol !== 'https:' || !ALLOWED_DOMAINS.includes(url.hostname) || (url.port && url.port !== '443')) {
-    console.error(`Blocked redirect to unauthorized URL: ${url.toString()}`)
+    console.error(`Blocked redirect: host=${url.hostname} protocol=${url.protocol} port=${url.port || 'default'}`)
     return new NextResponse('Not Found', { status: 404 })
   }
 
