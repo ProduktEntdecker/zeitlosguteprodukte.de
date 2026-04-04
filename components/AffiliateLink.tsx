@@ -26,9 +26,9 @@ declare global {
  * Affiliate Link Component with UTM tracking
  *
  * Adds UTM parameters to track affiliate link clicks:
- * - utm_source: zeitloseprodukte
+ * - utm_source: zeitlosguteprodukte.de
  * - utm_medium: affiliate
- * - utm_campaign: product-{slug}
+ * - utm_campaign: {slug}
  * - utm_content: {variant}
  */
 export default function AffiliateLink({
@@ -42,14 +42,15 @@ export default function AffiliateLink({
 }: AffiliateLinkProps) {
   // Build UTM parameters
   const utmParams = new URLSearchParams({
-    utm_source: 'zeitlosguteprodukte',
+    utm_source: 'zeitlosguteprodukte.de',
     utm_medium: 'affiliate',
-    utm_campaign: campaign || `product-${productSlug}`,
+    utm_campaign: campaign || productSlug,
     utm_content: variant,
   })
 
-  // Append UTM to URL
-  const trackedUrl = `${href}${href.includes('?') ? '&' : '?'}${utmParams.toString()}`
+  // Skip client-side UTM for /go/ links (UTM is added server-side in the route handler)
+  const isGoLink = href.startsWith('/go/') || new URL(href, 'https://zeitlosguteprodukte.de').pathname.startsWith('/go/')
+  const trackedUrl = isGoLink ? href : `${href}${href.includes('?') ? '&' : '?'}${utmParams.toString()}`
 
   // Track click event with Plausible Analytics
   const handleClick = () => {

@@ -357,8 +357,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     <p className="font-serif text-xl text-white mb-4">
                       {product.price}
                     </p>
+                    <AffiliateDisclosure className="text-xs text-creme-100/60 mb-3" />
                     <AffiliateLink
-                      href={product.affiliateUrl}
+                      href={`/go/${product.slug}`}
                       productSlug={product.slug}
                       productName={product.name}
                       variant="button"
