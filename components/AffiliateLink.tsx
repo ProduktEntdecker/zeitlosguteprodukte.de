@@ -49,7 +49,7 @@ export default function AffiliateLink({
   })
 
   // Skip client-side UTM for /go/ links (UTM is added server-side in the route handler)
-  const isGoLink = href.startsWith('/go/')
+  const isGoLink = href.startsWith('/go/') || new URL(href, 'https://zeitlosguteprodukte.de').pathname.startsWith('/go/')
   const trackedUrl = isGoLink ? href : `${href}${href.includes('?') ? '&' : '?'}${utmParams.toString()}`
 
   // Track click event with Plausible Analytics
