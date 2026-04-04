@@ -22,9 +22,9 @@ export async function GET(
     return new NextResponse('Not Found', { status: 404 })
   }
 
-  // Security: Only redirect to allowed domains
-  if (!ALLOWED_DOMAINS.includes(url.hostname)) {
-    console.error(`Blocked redirect to unauthorized domain: ${url.hostname}`)
+  // Security: Only redirect to allowed HTTPS domains on standard port
+  if (url.protocol !== 'https:' || !ALLOWED_DOMAINS.includes(url.hostname) || (url.port && url.port !== '443')) {
+    console.error(`Blocked redirect to unauthorized URL: ${url.toString()}`)
     return new NextResponse('Not Found', { status: 404 })
   }
 
