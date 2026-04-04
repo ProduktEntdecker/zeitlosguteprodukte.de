@@ -26,9 +26,9 @@ declare global {
  * Affiliate Link Component with UTM tracking
  *
  * Adds UTM parameters to track affiliate link clicks:
- * - utm_source: zeitloseprodukte
+ * - utm_source: zeitlosguteprodukte.de
  * - utm_medium: affiliate
- * - utm_campaign: product-{slug}
+ * - utm_campaign: {slug}
  * - utm_content: {variant}
  */
 export default function AffiliateLink({
@@ -42,9 +42,9 @@ export default function AffiliateLink({
 }: AffiliateLinkProps) {
   // Build UTM parameters
   const utmParams = new URLSearchParams({
-    utm_source: 'zeitlosguteprodukte',
+    utm_source: 'zeitlosguteprodukte.de',
     utm_medium: 'affiliate',
-    utm_campaign: campaign || `product-${productSlug}`,
+    utm_campaign: campaign || productSlug,
     utm_content: variant,
   })
 
