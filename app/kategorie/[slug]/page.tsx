@@ -10,7 +10,6 @@ import {
   getCategoryBySlug,
   getProductsByCategory,
 } from '@/lib/products'
-import type { CategorySlug } from '@/lib/products'
 import { generateBreadcrumbSchema, generateItemListSchema } from '@/lib/schema'
 import { safeJsonLd } from '@/lib/json-ld'
 
@@ -52,7 +51,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     notFound()
   }
 
-  const categoryProducts = getProductsByCategory(category.slug as CategorySlug)
+  const categoryProducts = getProductsByCategory(category.slug)
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Startseite', url: 'https://zeitlosguteprodukte.de' },

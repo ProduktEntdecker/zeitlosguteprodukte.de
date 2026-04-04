@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "generate:lastmod": "npx tsx scripts/generate-lastmod.ts",
+    "prebuild": "npm run generate:lastmod",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
