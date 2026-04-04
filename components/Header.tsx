@@ -23,7 +23,10 @@ export default function Header() {
           : 'bg-transparent py-6'
       }`}
     >
-      <nav className="container-editorial flex items-center justify-between" aria-label="Hauptnavigation">
+      <nav
+        className="container-editorial flex items-center justify-between"
+        aria-label="Hauptnavigation"
+      >
         {/* Logo */}
         <Link
           href="/"
@@ -67,6 +70,15 @@ export default function Header() {
             }`}
           >
             Produkte
+          </Link>
+
+          <Link
+            href="/kategorie"
+            className={`text-sm font-medium tracking-wide uppercase transition-colors duration-300 hover:text-cognac-600 ${
+              isScrolled ? 'text-navy-700' : 'text-navy-800'
+            }`}
+          >
+            Kategorien
           </Link>
 
           <Link

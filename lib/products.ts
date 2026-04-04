@@ -1,3 +1,42 @@
+export type CategorySlug = 'kueche' | 'tischkultur' | 'outdoor-reisen'
+
+export interface Category {
+  slug: CategorySlug
+  name: string
+  description: string
+  seo: { title: string; description: string }
+}
+
+export const categories: Category[] = [
+  {
+    slug: 'kueche',
+    name: 'Küche',
+    description: 'Zeitlose Küchenklassiker, die Generationen überdauern — von Gusseisen-Brätern bis handgeschmiedeten Messern.',
+    seo: {
+      title: 'Zeitlose Küchenprodukte — Qualität für Generationen',
+      description: 'Kuratierte Küchenklassiker von Le Creuset, KitchenAid, Güde und mehr. Produkte, die ein Leben lang halten.',
+    },
+  },
+  {
+    slug: 'tischkultur',
+    name: 'Tischkultur',
+    description: 'Handgefertigte Gläser, Keramik und Besteck — für Tischmomente, die bleiben.',
+    seo: {
+      title: 'Tischkultur — Handgefertigte Gläser, Keramik & Besteck',
+      description: 'Riedel Weingläser, Gmundner Keramik, Laguiole Steakmesser und Duralex Gläser. Tischkultur mit Tradition.',
+    },
+  },
+  {
+    slug: 'outdoor-reisen',
+    name: 'Outdoor & Reisen',
+    description: 'Bewährte Begleiter für unterwegs — wetterfest, langlebig, reparierbar.',
+    seo: {
+      title: 'Outdoor & Reisen — Langlebige Begleiter für unterwegs',
+      description: 'Barbour Wachsjacken und Rimowa Koffer. Zeitlose Qualität für Reise und Outdoor.',
+    },
+  },
+]
+
 export interface Product {
   slug: string
   name: string
@@ -9,6 +48,7 @@ export interface Product {
   price: string
   affiliateUrl: string
   category: string
+  categorySlug: CategorySlug
   heritage: string
   warranty: string
   madeIn: string
@@ -55,6 +95,7 @@ Es gibt kaum ein anderes Küchenutensil, das so oft vererbt wird wie ein Le Creu
     price: '299,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B00005QFQ5',
     category: 'Küche',
+    categorySlug: 'kueche',
     heritage: 'Seit 1925',
     warranty: 'Lebenslange Garantie',
     madeIn: 'Frankreich',
@@ -104,7 +145,8 @@ Die Bedale passt zum Spaziergang mit dem Hund genauso wie zum Business-Casual im
     image: '/images/products/barbour-bedale.webp',
     price: '319,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B008J3VTVW',
-    category: 'Kleidung',
+    category: 'Outdoor & Reisen',
+    categorySlug: 'outdoor-reisen',
     heritage: 'Seit 1894',
     warranty: '2 Jahre + Rewaxing-Service',
     madeIn: 'England',
@@ -154,7 +196,8 @@ Mit Preisen ab 800€ ist ein Rimowa keine kleine Anschaffung. Aber rechnen wir:
     image: '/images/products/rimowa-original.webp',
     price: '880,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B07PNMK8VG',
-    category: 'Reisen',
+    category: 'Outdoor & Reisen',
+    categorySlug: 'outdoor-reisen',
     heritage: 'Seit 1898',
     warranty: 'Lebenslanger Funktionalitätsservice',
     madeIn: 'Deutschland',
@@ -205,6 +248,7 @@ Für etwa 15€ bekommen Sie ein Messer, das ein Leben lang hält. Kein Marketin
     price: '16,90 €',
     affiliateUrl: 'https://www.amazon.de/dp/B002SCUO04',
     category: 'Küche',
+    categorySlug: 'kueche',
     heritage: 'Seit 1890',
     warranty: 'Lebenslange Garantie auf die Klinge',
     madeIn: 'Frankreich',
@@ -255,6 +299,7 @@ Morgens den unteren Behälter mit Wasser füllen, das Kaffeepulver einfüllen, d
     price: '34,90 €',
     affiliateUrl: 'https://www.amazon.de/dp/B0000AN3QI',
     category: 'Küche',
+    categorySlug: 'kueche',
     heritage: 'Seit 1933',
     warranty: '2 Jahre',
     madeIn: 'Italien',
@@ -305,6 +350,7 @@ Peugeot bietet passende Salz- und Pfeffermühlen im gleichen Design. Das Salzmah
     price: '44,90 €',
     affiliateUrl: 'https://www.amazon.de/dp/B001E5E0Y2',
     category: 'Küche',
+    categorySlug: 'kueche',
     heritage: 'Seit 1874',
     warranty: 'Lebenslange Garantie auf das Mahlwerk',
     madeIn: 'Frankreich',
@@ -355,6 +401,7 @@ Mit etwa 500€ ist die Artisan keine Spontankaufentscheidung. Aber sie hält 20
     price: '499,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B00CPLGFTO',
     category: 'Küche',
+    categorySlug: 'kueche',
     heritage: 'Seit 1919',
     warranty: '5 Jahre (EU), optional 10 Jahre',
     madeIn: 'USA',
@@ -405,6 +452,7 @@ Solingen ist seit dem Mittelalter das Zentrum der deutschen Klingenproduktion. �
     price: '189,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B001RIYR78',
     category: 'Küche',
+    categorySlug: 'kueche',
     heritage: 'Seit 1910',
     warranty: '3 Jahre + lebenslanger Nachschleifservice',
     madeIn: 'Deutschland (Solingen)',
@@ -454,7 +502,8 @@ In Frankreich schenkt man Laguiole-Messer traditionell zu besonderen Anlässen. 
     image: '/images/products/laguiole-steakmesser.webp',
     price: '289,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B07D4BQRJ9',
-    category: 'Küche',
+    category: 'Tischkultur',
+    categorySlug: 'tischkultur',
     heritage: 'Seit 1829',
     warranty: '5 Jahre',
     madeIn: 'Frankreich (Aubrac)',
@@ -504,7 +553,8 @@ Die Picardie-Gläser zum 80. Jubiläum sind eine Hommage an die ursprüngliche V
     image: '/images/products/duralex-picardie.webp',
     price: '24,90 €',
     affiliateUrl: 'https://www.amazon.de/dp/B00004S1CQ',
-    category: 'Küche',
+    category: 'Tischkultur',
+    categorySlug: 'tischkultur',
     heritage: 'Seit 1945',
     warranty: '10 Jahre gegen Produktionsfehler',
     madeIn: 'Frankreich',
@@ -554,7 +604,8 @@ Die Veloce-Serie ist Riedels Empfehlung für Menschen, die guten Wein trinken, a
     image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80', // TODO: Ersetzen durch Herstellerbild (Riedel kontaktieren)
     price: '59,90 €',
     affiliateUrl: 'https://www.amazon.de/dp/B07YQKP91Q',
-    category: 'Küche',
+    category: 'Tischkultur',
+    categorySlug: 'tischkultur',
     heritage: 'Seit 1756',
     warranty: '2 Jahre',
     madeIn: 'Österreich',
@@ -604,7 +655,8 @@ Gmundner Keramik wird nicht exportiert, um billig verkauft zu werden. Sie ist ei
     image: '/images/products/gmundner-keramik-fruehstueck.webp',
     price: '39,00 €',
     affiliateUrl: 'https://www.amazon.de/dp/B009MP04ZK',
-    category: 'Küche',
+    category: 'Tischkultur',
+    categorySlug: 'tischkultur',
     heritage: 'Seit 1492',
     warranty: '2 Jahre',
     madeIn: 'Österreich (Gmunden)',
@@ -623,6 +675,14 @@ Gmundner Keramik wird nicht exportiert, um billig verkauft zu werden. Sie ist ei
     },
   },
 ]
+
+export function getCategoryBySlug(slug: string): Category | undefined {
+  return categories.find((c) => c.slug === slug)
+}
+
+export function getProductsByCategory(slug: CategorySlug): Product[] {
+  return products.filter((p) => p.categorySlug === slug)
+}
 
 export function getProductBySlug(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug)

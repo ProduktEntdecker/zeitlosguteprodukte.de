@@ -45,6 +45,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/kategorie"
+                  className="text-creme-400 hover:text-white transition-colors duration-300"
+                >
+                  Kategorien
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/#newsletter"
                   className="text-creme-400 hover:text-white transition-colors duration-300"
                 >
@@ -75,9 +83,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <span className="text-creme-500 text-sm">
-                  * Affiliate-Links
-                </span>
+                <span className="text-creme-500 text-sm">* Affiliate-Links</span>
               </li>
             </ul>
           </nav>
@@ -88,7 +94,7 @@ export default function Footer() {
       <div className="border-t border-navy-800">
         <div className="container-editorial py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-creme-500 text-sm">
-            © {currentYear} Zeitlos Gute Produkte. Alle Rechte vorbehalten.
+            &copy; {currentYear} Zeitlos Gute Produkte. Alle Rechte vorbehalten.
           </p>
 
           <p className="text-creme-600 text-xs">
