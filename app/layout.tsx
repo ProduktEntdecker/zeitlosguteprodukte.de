@@ -1,20 +1,22 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Source_Sans_3, Libre_Baskerville } from 'next/font/google'
 import Script from 'next/script'
 import { generateWebsiteSchema, generateOrganizationSchema } from '@/lib/schema'
 import { safeJsonLd } from '@/lib/json-ld'
 import './globals.css'
 
-const inter = Inter({
+const sourceSans = Source_Sans_3({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-source-sans',
 })
 
-const playfair = Playfair_Display({
+const libreBaskerville = Libre_Baskerville({
   subsets: ['latin'],
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
   display: 'swap',
-  variable: '--font-playfair',
+  variable: '--font-libre',
 })
 
 export const viewport: Viewport = {
@@ -107,7 +109,7 @@ export default function RootLayout({
   const organizationSchema = generateOrganizationSchema()
 
   return (
-    <html lang="de" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="de" className={`${sourceSans.variable} ${libreBaskerville.variable}`}>
       <body className="min-h-screen">
         {/* JSON-LD Structured Data: WebSite + Organization (global, auf jeder Seite) */}
         <Script

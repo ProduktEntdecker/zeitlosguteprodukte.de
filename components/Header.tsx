@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out-expo ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-250 ease-out-soft ${
         isScrolled
           ? 'bg-creme-100/95 backdrop-blur-md shadow-elegant py-4'
           : 'bg-transparent py-6'
@@ -36,12 +36,12 @@ export default function Header() {
           {/* Logomark */}
           <div className="relative w-10 h-10 flex items-center justify-center">
             <div
-              className={`absolute inset-0 border-2 transition-all duration-500 ease-out-expo ${
+              className={`absolute inset-0 border-2 transition-all duration-200 ease-out-soft ${
                 isScrolled ? 'border-navy-900' : 'border-navy-900'
               } group-hover:border-cognac-600`}
             />
             <span
-              className={`font-serif text-xl font-semibold transition-colors duration-300 ${
+              className={`font-serif text-xl font-semibold transition-colors duration-200 ${
                 isScrolled ? 'text-navy-900' : 'text-navy-900'
               } group-hover:text-cognac-600`}
             >
@@ -52,7 +52,7 @@ export default function Header() {
           {/* Wordmark - hidden on mobile */}
           <div className="hidden sm:block">
             <span
-              className={`font-serif text-lg tracking-tight transition-colors duration-300 ${
+              className={`font-serif text-lg tracking-tight transition-colors duration-200 ${
                 isScrolled ? 'text-navy-900' : 'text-navy-900'
               }`}
             >
@@ -65,7 +65,7 @@ export default function Header() {
         <div className="flex items-center gap-8">
           <Link
             href="/#produkte"
-            className={`text-sm font-medium tracking-wide uppercase transition-colors duration-300 hover:text-cognac-600 ${
+            className={`text-sm font-medium tracking-wide uppercase transition-colors duration-200 hover:text-cognac-600 ${
               isScrolled ? 'text-navy-700' : 'text-navy-800'
             }`}
           >
@@ -74,7 +74,7 @@ export default function Header() {
 
           <Link
             href="/kategorie"
-            className={`text-sm font-medium tracking-wide uppercase transition-colors duration-300 hover:text-cognac-600 ${
+            className={`text-sm font-medium tracking-wide uppercase transition-colors duration-200 hover:text-cognac-600 ${
               isScrolled ? 'text-navy-700' : 'text-navy-800'
             }`}
           >
@@ -83,7 +83,7 @@ export default function Header() {
 
           <Link
             href="/#newsletter"
-            className={`hidden sm:block text-sm font-medium tracking-wide uppercase transition-colors duration-300 hover:text-cognac-600 ${
+            className={`hidden sm:block text-sm font-medium tracking-wide uppercase transition-colors duration-200 hover:text-cognac-600 ${
               isScrolled ? 'text-navy-700' : 'text-navy-800'
             }`}
           >

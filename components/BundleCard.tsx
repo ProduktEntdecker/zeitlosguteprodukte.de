@@ -21,7 +21,7 @@ export default function BundleCard({ bundle, index = 0 }: BundleCardProps) {
 
   return (
     <article
-      className="group bg-white border border-navy-100 overflow-hidden transition-all duration-500 hover:border-cognac-300 hover:shadow-elegant-lg"
+      className="group bg-white border border-navy-100 overflow-hidden transition-all duration-200 hover:border-cognac-300 hover:shadow-elegant-lg"
       style={{ animationDelay: `${index * 100}ms` }}
     >
       {/* Product Images Grid */}
@@ -34,10 +34,10 @@ export default function BundleCard({ bundle, index = 0 }: BundleCardProps) {
                 alt={product.name}
                 fill
                 sizes="(max-width: 768px) 33vw, 20vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover transition-transform duration-250 group-hover:scale-[1.02]"
               />
               {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
             </div>
           ))}
         </div>
@@ -90,7 +90,7 @@ export default function BundleCard({ bundle, index = 0 }: BundleCardProps) {
           >
             Details ansehen
             <svg
-              className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+              className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

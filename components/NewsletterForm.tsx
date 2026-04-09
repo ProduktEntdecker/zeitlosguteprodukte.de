@@ -46,7 +46,7 @@ export default function NewsletterForm({
 
       if (response.ok) {
         setStatus('success')
-        setMessage('Willkommen! Überprüfen Sie Ihren Posteingang.')
+        setMessage('Fast geschafft! Bitte bestätigen Sie Ihre E-Mail-Adresse.')
         setEmail('')
 
         // Track successful signup with Plausible
@@ -83,7 +83,7 @@ export default function NewsletterForm({
             required
             disabled={status === 'loading'}
             className={`
-              w-full px-5 py-4 text-base transition-all duration-300
+              w-full px-5 py-4 text-base transition-all duration-200
               focus:outline-none focus:ring-0
               disabled:opacity-50 disabled:cursor-not-allowed
               ${
@@ -97,7 +97,7 @@ export default function NewsletterForm({
 
           {/* Animated border on focus */}
           <div
-            className={`absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-500 ease-out-expo ${
+            className={`absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-250 ease-out-expo ${
               isHero ? 'bg-cognac-400' : 'bg-cognac-500'
             }`}
             style={{ width: status === 'loading' ? '100%' : '0%' }}
@@ -109,7 +109,7 @@ export default function NewsletterForm({
           disabled={status === 'loading'}
           className={`
             relative px-8 py-4 text-sm font-medium tracking-wide uppercase
-            overflow-hidden transition-all duration-500 ease-out-expo
+            overflow-hidden transition-all duration-250 ease-out-expo
             disabled:opacity-50 disabled:cursor-not-allowed
             group
             ${
@@ -121,7 +121,7 @@ export default function NewsletterForm({
         >
           {/* Hover effect */}
           <span
-            className={`absolute inset-0 origin-left scale-x-0 transition-transform duration-500 ease-out-expo group-hover:scale-x-100 ${
+            className={`absolute inset-0 origin-left scale-x-0 transition-transform duration-250 ease-out-expo group-hover:scale-x-100 ${
               isHero ? 'bg-cognac-500' : 'bg-cognac-600'
             }`}
           />
@@ -160,7 +160,7 @@ export default function NewsletterForm({
       {/* Status Message */}
       {status !== 'idle' && status !== 'loading' && (
         <p
-          className={`mt-3 text-sm transition-all duration-300 ${
+          className={`mt-3 text-sm transition-all duration-200 ${
             status === 'success'
               ? isHero
                 ? 'text-green-300'

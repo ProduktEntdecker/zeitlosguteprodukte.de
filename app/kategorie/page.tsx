@@ -76,21 +76,21 @@ export default function KategorienPage() {
                   <Link
                     key={category.slug}
                     href={`/kategorie/${category.slug}`}
-                    className="group block bg-white border border-navy-100 p-8 hover:border-cognac-400 transition-colors duration-300"
+                    className="group block bg-white border border-navy-100 p-8 hover:border-cognac-400 transition-colors duration-200"
                   >
                     <span className="text-overline text-cognac-600 block mb-4">
                       {productCount} {productCount === 1 ? 'Produkt' : 'Produkte'}
                     </span>
-                    <h2 className="font-serif text-headline text-navy-900 mb-4 group-hover:text-cognac-700 transition-colors duration-300">
+                    <h2 className="font-serif text-headline text-navy-900 mb-4 group-hover:text-cognac-700 transition-colors duration-200">
                       {category.name}
                     </h2>
                     <p className="text-body text-navy-600 mb-6 text-pretty">
                       {category.description}
                     </p>
-                    <span className="flex items-center gap-2 text-sm font-medium text-cognac-600 group-hover:gap-3 transition-all duration-300">
+                    <span className="flex items-center gap-2 text-sm font-medium text-cognac-600 group-hover:gap-3 transition-all duration-200">
                       Kategorie entdecken
                       <svg
-                        className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                        className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"

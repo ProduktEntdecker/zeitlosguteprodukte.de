@@ -108,9 +108,9 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Subscribe via Brevo Contacts API
+    // Subscribe via Brevo Double Opt-In API
     const brevoResponse = await fetch(
-      'https://api.brevo.com/v3/contacts',
+      'https://api.brevo.com/v3/contacts/doubleOptinConfirmation',
       {
         method: 'POST',
         headers: {
@@ -119,8 +119,9 @@ export async function POST(request: NextRequest) {
         },
         body: JSON.stringify({
           email: normalizedEmail,
-          listIds: [env.brevo.listId],
-          updateEnabled: true,
+          includeListIds: [env.brevo.listId],
+          templateId: env.brevo.doiTemplateId,
+          redirectionUrl: env.brevo.redirectionUrl,
         }),
       }
     )
@@ -129,7 +130,7 @@ export async function POST(request: NextRequest) {
       const brevoData: BrevoErrorResponse = await brevoResponse.json()
       console.error('Brevo API error:', brevoData)
 
-      // Handle duplicate contact (Brevo returns "duplicate_parameter")
+      // Handle duplicate contact (already confirmed)
       if (brevoData.code === 'duplicate_parameter') {
         return NextResponse.json({
           success: true,
@@ -146,7 +147,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'Vielen Dank für Ihre Anmeldung!',
+      message: 'Fast geschafft! Bitte bestätigen Sie Ihre E-Mail-Adresse.',
       email: normalizedEmail,
     })
   } catch (error) {

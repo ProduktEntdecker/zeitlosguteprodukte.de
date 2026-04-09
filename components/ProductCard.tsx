@@ -30,11 +30,11 @@ export default function ProductCard({ product, index = 0, campaign }: ProductCar
             alt={product.name}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover transition-transform duration-700 ease-out-expo group-hover:scale-105"
+            className="object-cover transition-transform duration-250 ease-out-expo group-hover:scale-[1.02]"
           />
 
           {/* Overlay on hover */}
-          <div className="absolute inset-0 bg-navy-950/0 transition-colors duration-500 group-hover:bg-navy-950/10" />
+          <div className="absolute inset-0 bg-navy-950/0 transition-colors duration-200 group-hover:bg-navy-950/5" />
 
           {/* Category Tag */}
           <div className="absolute top-4 left-4">
@@ -44,7 +44,7 @@ export default function ProductCard({ product, index = 0, campaign }: ProductCar
           </div>
 
           {/* Heritage Badge */}
-          <div className="absolute bottom-4 right-4 opacity-0 translate-y-2 transition-all duration-500 ease-out-expo group-hover:opacity-100 group-hover:translate-y-0">
+          <div className="absolute bottom-4 right-4 opacity-0 translate-y-1 transition-all duration-200 ease-out-expo group-hover:opacity-100 group-hover:translate-y-0">
             <span className="inline-block px-3 py-1.5 text-xs font-medium bg-cognac-600 text-white">
               {product.heritage}
             </span>
@@ -57,7 +57,7 @@ export default function ProductCard({ product, index = 0, campaign }: ProductCar
           <p className="text-overline text-cognac-600">{product.brand}</p>
 
           {/* Product Name */}
-          <h3 className="font-serif text-title text-navy-900 group-hover:text-cognac-700 transition-colors duration-300">
+          <h3 className="font-serif text-title text-navy-900 group-hover:text-cognac-700 transition-colors duration-200">
             {product.name}
           </h3>
 
@@ -73,10 +73,10 @@ export default function ProductCard({ product, index = 0, campaign }: ProductCar
             </span>
 
             {/* Arrow indicator */}
-            <span className="flex items-center gap-2 text-sm font-medium text-cognac-600 group-hover:gap-3 transition-all duration-300">
+            <span className="flex items-center gap-2 text-sm font-medium text-cognac-600 group-hover:gap-3 transition-all duration-200">
               Mehr erfahren
               <svg
-                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
