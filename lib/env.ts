@@ -61,7 +61,15 @@ export const env = {
     get listId() {
       const raw = getEnvVar('BREVO_LIST_ID')?.trim()
       const parsed = raw ? Number.parseInt(raw, 10) : Number.NaN
-      return Number.isInteger(parsed) && parsed > 0 ? parsed : 2
+      return Number.isInteger(parsed) && parsed > 0 ? parsed : 3
+    },
+    get doiTemplateId() {
+      const raw = getEnvVar('BREVO_DOI_TEMPLATE_ID')?.trim()
+      const parsed = raw ? Number.parseInt(raw, 10) : Number.NaN
+      return Number.isInteger(parsed) && parsed > 0 ? parsed : 1
+    },
+    get redirectionUrl() {
+      return getEnvVar('BREVO_DOI_REDIRECT_URL')?.trim() || 'https://zeitlosguteprodukte.de/willkommen'
     },
     get isConfigured() {
       return Boolean(getEnvVar('BREVO_API_KEY'))

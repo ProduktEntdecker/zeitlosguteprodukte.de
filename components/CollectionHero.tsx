@@ -62,13 +62,13 @@ export default function CollectionHero({ collection }: CollectionHeroProps) {
           {/* CTA */}
           <button
             onClick={scrollToProducts}
-            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-cognac-600 text-white font-medium tracking-wide overflow-hidden transition-all duration-500 ease-out-expo hover:bg-cognac-500"
+            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-cognac-600 text-white font-medium tracking-wide overflow-hidden transition-all duration-250 ease-out-expo hover:bg-cognac-500"
           >
-            <span className="absolute inset-0 bg-cognac-500 origin-left scale-x-0 transition-transform duration-500 ease-out-expo group-hover:scale-x-100" />
+            <span className="absolute inset-0 bg-cognac-500 origin-left scale-x-0 transition-transform duration-250 ease-out-expo group-hover:scale-x-100" />
             <span className="relative z-10 flex items-center gap-3">
               {collection.campaign?.ctaText || 'Produkte entdecken'}
               <svg
-                className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1"
+                className="w-5 h-5 transition-transform duration-200 group-hover:translate-y-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

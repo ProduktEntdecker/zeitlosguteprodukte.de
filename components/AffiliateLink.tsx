@@ -97,18 +97,18 @@ export default function AffiliateLink({
     button: `
       relative inline-flex items-center justify-center gap-3 px-8 py-4
       bg-cognac-600 text-white font-medium tracking-wide
-      overflow-hidden transition-all duration-500 ease-out-expo
+      overflow-hidden transition-all duration-250 ease-out-expo
       hover:bg-cognac-500 group
     `,
     text: `
       inline-flex items-center gap-2 text-cognac-600 font-medium
-      hover:text-cognac-700 transition-colors duration-300
+      hover:text-cognac-700 transition-colors duration-200
       border-b border-cognac-300 hover:border-cognac-500
     `,
     card: `
       block w-full p-6 bg-white border border-navy-100
       hover:border-cognac-300 hover:shadow-elegant-lg
-      transition-all duration-500 ease-out-expo group
+      transition-all duration-250 ease-out-expo group
     `,
   }
 
@@ -124,11 +124,11 @@ export default function AffiliateLink({
       {variant === 'button' && (
         <>
           {/* Hover effect */}
-          <span className="absolute inset-0 bg-cognac-500 origin-left scale-x-0 transition-transform duration-500 ease-out-expo group-hover:scale-x-100" />
+          <span className="absolute inset-0 bg-cognac-500 origin-left scale-x-0 transition-transform duration-250 ease-out-expo group-hover:scale-x-100" />
           <span className="relative z-10 flex items-center gap-3">
             {children}
             <svg
-              className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+              className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

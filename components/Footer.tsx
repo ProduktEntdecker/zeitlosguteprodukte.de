@@ -30,7 +30,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/"
-                  className="text-creme-400 hover:text-white transition-colors duration-300"
+                  className="text-creme-400 hover:text-white transition-colors duration-200"
                 >
                   Startseite
                 </Link>
@@ -38,7 +38,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/#produkte"
-                  className="text-creme-400 hover:text-white transition-colors duration-300"
+                  className="text-creme-400 hover:text-white transition-colors duration-200"
                 >
                   Produkte
                 </Link>
@@ -46,7 +46,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/kategorie"
-                  className="text-creme-400 hover:text-white transition-colors duration-300"
+                  className="text-creme-400 hover:text-white transition-colors duration-200"
                 >
                   Kategorien
                 </Link>
@@ -54,7 +54,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/#newsletter"
-                  className="text-creme-400 hover:text-white transition-colors duration-300"
+                  className="text-creme-400 hover:text-white transition-colors duration-200"
                 >
                   Newsletter
                 </Link>
@@ -69,7 +69,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/impressum"
-                  className="text-creme-400 hover:text-white transition-colors duration-300"
+                  className="text-creme-400 hover:text-white transition-colors duration-200"
                 >
                   Impressum
                 </Link>
@@ -77,7 +77,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/datenschutz"
-                  className="text-creme-400 hover:text-white transition-colors duration-300"
+                  className="text-creme-400 hover:text-white transition-colors duration-200"
                 >
                   Datenschutz
                 </Link>
